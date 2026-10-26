@@ -1,0 +1,14 @@
+---
+layout: shell
+---
+{% assign items = site.posts | where: "section", page.section %}
+{% assign latest = items.first %}
+<main class="section">
+  {% include section-head.html key=page.section %}
+
+  {% if latest %}
+  {% include article.html post=latest body=latest.content %}
+  {% endif %}
+
+  {% include works.html key=page.section current=latest.url %}
+</main>

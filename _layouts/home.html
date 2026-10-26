@@ -1,26 +1,29 @@
 ---
-layout: default
+layout: shell
 ---
-{% for post in site.posts limit: 5 %}
-<article class="entry">
-  <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
-  <div class="entry-panel">
-    <time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%-d %b %Y' }}</time>
-    <div class="entry-body">
-      {{ post.content }}
-    </div>
-  </div>
-</article>
-{% endfor %}
-
-<section class="archive">
-  <h2 class="archive-title">All Posts <span>{{ site.posts | size }}</span></h2>
-  <ul class="archive-list">
-    {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+<main class="statement">
+  <a class="row row-1" href="{{ '/about/' | relative_url }}">
+    <span class="meta"><span class="idx">00</span><span class="cat">Profile</span></span>
+    <span class="line">Minzi Kim</span>
+  </a>
+  <a class="row row-2 is-soon" aria-disabled="true">
+    <span class="meta"><span class="idx">01</span><span class="cat">Fashion<small>Visual Direction</small></span></span>
+    <span class="line">Directs fashion,</span>
+  </a>
+  <a class="row row-3 is-soon" aria-disabled="true">
+    <span class="meta"><span class="idx">02</span><span class="cat">Education<small>Planning · Operations · Coaching</small></span></span>
+    <span class="line">Designs education,</span>
+  </a>
+  <a class="row row-4" href="{{ '/ai-lab/' | relative_url }}">
+    <span class="meta"><span class="idx">03</span><span class="cat">AI Lab</span></span>
+    <span class="line">Builds with AI,</span>
+  </a>
+  <a class="row row-5 is-soon" aria-disabled="true">
+    <span class="meta"><span class="idx">04</span><span class="cat">Investing</span></span>
+    <span class="line">Studies stocks,</span>
+  </a>
+  <a class="row row-6 is-soon" aria-disabled="true">
+    <span class="meta"><span class="idx">05</span><span class="cat">Journal<small>Thoughts · Life · Books</small></span></span>
+    <span class="line">And writes.</span>
+  </a>
+</main>

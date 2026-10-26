@@ -1,26 +1,10 @@
 ---
-layout: default
+layout: shell
 ---
-<article class="entry">
-  <h1 class="entry-title">{{ page.title }}</h1>
-  <div class="entry-panel">
-    <time class="entry-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %b %Y' }}</time>
+<main class="section">
+  {% if page.section %}{% include section-head.html key=page.section %}{% endif %}
 
-    {% if page.previous %}
-    <a class="side side-prev" href="{{ page.previous.url | relative_url }}">
-      <span class="side-label">이전 글</span>
-      <span class="side-title">{{ page.previous.title }}</span>
-    </a>
-    {% endif %}
-    {% if page.next %}
-    <a class="side side-next" href="{{ page.next.url | relative_url }}">
-      <span class="side-label">다음 글</span>
-      <span class="side-title">{{ page.next.title }}</span>
-    </a>
-    {% endif %}
+  {% include article.html post=page body=content %}
 
-    <div class="entry-body">
-      {{ content }}
-    </div>
-  </div>
-</article>
+  {% if page.section %}{% include works.html key=page.section current=page.url %}{% endif %}
+</main>

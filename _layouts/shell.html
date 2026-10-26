@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}Minzi Kim</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-left">
+      <a href="{{ '/' | relative_url }}">Minzi Kim,</a>
+      <a class="u" href="{{ '/about/' | relative_url }}">About</a>
+    </div>
+    <div class="bar-mid">Portfolio / {{ site.time | date: '%Y' }}</div>
+    <div class="bar-right">
+      <span>KST <time id="clock">--:--</time></span>
+      <a href="{{ '/about/' | relative_url }}">Contact</a>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <script>
+    (function () {
+      var el = document.getElementById('clock');
+      var fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Seoul', hour: 'numeric', minute: '2-digit' });
+      function tick() { el.textContent = fmt.format(new Date()); }
+      tick();
+      setInterval(tick, 30000);
+    })();
+  </script>
+</body>
+</html>
