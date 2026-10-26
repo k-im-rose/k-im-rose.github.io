@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[과제] Computational Thinking — 투자 뉴스 브리핑 자동화"
+title: "Computational Thinking — 투자 뉴스 브리핑 자동화"
 date: 2026-10-26 09:00:00 +0900
 section: ai-lab
 ---
