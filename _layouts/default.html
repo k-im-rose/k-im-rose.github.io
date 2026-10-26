@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span>Minji</span>
+      <span>Kim</span>
+    </a>
+    <div class="year" aria-hidden="true">
+      <span>{{ site.time | date: '%Y' | slice: 0, 2 }}</span>
+      <span>{{ site.time | date: '%Y' | slice: 2, 2 }}</span>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p class="bio">{{ site.description }}. 모두의연구소 AIFFEL에서 AI 에이전트를 배우며 만든 것을 기록한다.</p>
+    <nav class="links">
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      <a href="https://blog.naver.com/k_im_rose">Naver Blog</a>
+    </nav>
+    <p class="copyright">All rights ©{{ site.time | date: '%Y' }} by Minji Kim</p>
+  </footer>
+</body>
+</html>

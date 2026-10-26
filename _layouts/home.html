@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% for post in site.posts limit: 5 %}
+<article class="entry">
+  <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+  <div class="entry-panel">
+    <time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%-d %b %Y' }}</time>
+    <div class="entry-body">
+      {{ post.content }}
+    </div>
+  </div>
+</article>
+{% endfor %}
+
+<section class="archive">
+  <h2 class="archive-title">All Posts <span>{{ site.posts | size }}</span></h2>
+  <ul class="archive-list">
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
