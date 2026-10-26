@@ -1,0 +1,13 @@
+title: 민지의 AI 에이전트 노트
+description: 투자 교육 운영 코치의 AI 에이전트 학습 기록
+lang: ko
+url: https://k-im-rose.github.io
+baseurl: ""
+theme: minima
+markdown: kramdown
+kramdown:
+  input: GFM
+timezone: Asia/Seoul
+github_username: k-im-rose
+header_pages:
+  - about.md
