@@ -1,0 +1,15 @@
+{% assign items = site.posts | where: "section", include.key %}
+<ol class="works">
+  <li class="works-head">
+    <span>Number</span><span>Title</span><span>Date</span>
+  </li>
+  {% for post in items %}
+  <li{% if post.url == include.current %} class="is-current"{% endif %}>
+    <a href="{{ post.url | relative_url }}">
+      <span class="w-idx">{{ items.size | minus: forloop.index0 | prepend: '0' | slice: -2, 2 }}</span>
+      <span class="w-title">{{ post.title }}</span>
+      <span class="w-date">{{ post.date | date: '%Y.%m.%d' }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>

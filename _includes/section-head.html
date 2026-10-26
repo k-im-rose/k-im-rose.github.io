@@ -1,0 +1,6 @@
+{% assign s = site.data.sections[include.key] %}
+<div class="section-head">
+  <span class="meta"><span class="idx">{{ s.index }}</span><a class="cat" href="{{ s.url | relative_url }}">{{ s.title }}</a></span>
+  <h1 class="section-title"><a href="{{ s.url | relative_url }}">{{ s.headline }}</a></h1>
+</div>
+{% if s.intro %}<p class="section-intro">{{ s.intro }}</p>{% endif %}

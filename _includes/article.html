@@ -1,0 +1,13 @@
+<article class="article">
+  <div class="article-head">
+    <span class="meta">
+      <time class="cat" datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%Y.%m.%d' }}</time>
+    </span>
+    {% comment %}Break after " — " so the subtitle never leaves a single word dangling{% endcomment %}
+    {% assign parts = include.post.title | split: ' — ' %}
+    <h2 class="article-title"><a href="{{ include.post.url | relative_url }}">{% if parts.size > 1 %}{{ parts[0] }} —<br>{{ parts[1] }}{% else %}{{ include.post.title }}{% endif %}</a></h2>
+  </div>
+  <div class="article-body">
+    {{ include.body }}
+  </div>
+</article>
