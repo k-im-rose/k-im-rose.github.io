@@ -10,7 +10,6 @@ section: ai-lab
 </div>
 <p class="game-links"><a href="https://k-im-rose.github.io/aiffel/nyangi-ramen-shop/" target="_blank" rel="noopener">새 창에서 크게 하기</a> · <a href="https://github.com/k-im-rose/aiffel/tree/main/nyangi-ramen-shop" target="_blank" rel="noopener">코드와 README 보기</a></p>
 
-
 냥이와 함께 손님의 주문대로 라면을 끓이는 3D 요리 게임이다.
 어린 시절 즐겨 하던 플래시 게임 **슈의 라면가게**에서 아이디어를 얻었다.
 
@@ -115,13 +114,6 @@ section: ai-lab
 ### 조작키
 키보드 자판이 **화면 버튼 배치와 똑같은 모양**이 되도록 왼손 가까이에 모았다. 각 버튼에 해당 키가 작게 적혀 있다.
 
-```
-화면                                   키보드
-[물 붓기][불 켜기][면 넣기][스프]      →  Q  W  E  R
-[고춧가루][계란][파][치즈][떡][만두]   →  A  S  D  F  G  H
-[버리기]        [서빙하기]             →  Z      Space
-```
-
 | 동작 | 버튼 | 키보드 |
 |---|---|---|
 | 물 붓기 | 물 붓기 (꾹 누르기) | Q (누르고 있기) |
@@ -163,17 +155,6 @@ Tab 키로 버튼 사이를 이동해 키보드만으로도 플레이할 수 있
 ---
 
 ## 5. 기술 구성
-
-```
-nyangi-ramen-shop/
-├── index.html   # 화면 구조 (주문서, 게이지, 버튼, 시작·결과 화면)
-├── styles.css   # 디자인 (색, 글꼴, 배치, 모바일 대응)
-├── script.js    # 3D 장면과 게임 규칙 (조리 상태, 손님, 별점, 하루 진행)
-├── favicon.png 외 아이콘 2개  # 브라우저 탭·홈 화면 아이콘 (게임 속 3D 냥이 얼굴)
-├── nyangi-ramen-rush/  # 북적북적 버전 (별도)
-├── parkour-runner/  # 도시 파쿠르 러너 (별도 게임)
-└── README.md
-```
 
 - **HTML · CSS · JavaScript** 세 파일로 나누어, 화면(구조)·모양(표현)·규칙(동작)을 따로 고칠 수 있게 했다.
 - **Three.js**로 3D 장면을 그렸다. 냥이와 손님은 이미지 파일 없이 공·원뿔 같은 기본 도형을 조립해서 만들었다.
