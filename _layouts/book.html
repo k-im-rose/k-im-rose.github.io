@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  {% if page.draft_page %}<meta name="robots" content="noindex">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/book.css' | relative_url }}">
+</head>
+<body>
+{% comment %}에디토리얼(책 내지) 방식의 웹 이력서. 스타일은 assets/css/book.css{% endcomment %}
+{{ content }}
+<script src="{{ '/assets/js/book.js' | relative_url }}"></script>
+</body>
+</html>

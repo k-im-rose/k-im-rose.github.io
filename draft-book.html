@@ -1,0 +1,171 @@
+---
+layout: book
+title: 김민지 — 웹 이력서 (시안)
+permalink: /draft/book/
+draft_page: true
+---
+<header class="runner">
+  <a class="runner-name" href="#cover">김민지 <span>웹 이력서</span></a>
+  <nav aria-label="주 메뉴">
+    <a href="#contents">목차</a>
+    <a href="{{ '/assets/files/resume.pdf' | relative_url }}" download="김민지_이력서.pdf">PDF</a>
+    <a href="mailto:mingdya@gmail.com">연락</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ───────── 표지 ───────── -->
+<section class="cover" id="cover">
+  <p class="cover-kicker">웹 이력서 · 2026</p>
+  <h1 class="cover-name">김민지</h1>
+  <p class="cover-sub">약 8년 · 패션 브랜드 비주얼 디렉팅 → 투자 교육 서비스 기획·운영 → AI로 직접 만들기</p>
+
+  <div class="cover-foot">
+    <div class="hook" aria-live="polite">
+      <p class="hook-line" id="hook-line">지원하지 않은 회사에서 연락이 왔다.</p>
+      <div class="hook-pick" role="group" aria-label="첫 문장 후보 고르기">
+        <span>첫 문장 후보 · 미확정</span>
+        <button type="button" class="on" data-hook="지원하지 않은 회사에서 연락이 왔다.">A</button>
+        <button type="button" data-hook="나를 채용한 사람은 이력서를 보지 않았다." data-note="사실 확인 필요">B</button>
+        <button type="button" data-hook="팀장이 나를 자기 팀으로 데려갔다. 몇 년 뒤에는 자기 회사로 데려갔다.">C</button>
+        <button type="button" data-hook="아무도 시키지 않은 모임을 열었다. 그곳에서 다음 직장이 정해졌다.">D</button>
+        <em id="hook-note"></em>
+      </div>
+    </div>
+
+    <nav class="contents" id="contents" aria-label="목차">
+      <p class="contents-title">차례</p>
+      <ol>
+        <li class="is-later"><span>프롤로그</span><span>첫 문장</span></li>
+        <li class="is-later"><span>1장</span><span>디자인에서 교육, 그리고 AI까지</span></li>
+        <li><a href="#ch2"><span>2장</span><span>일하면서 바꾼 것들</span></a></li>
+        <li class="is-later"><span>3장</span><span>회사별 경력</span></li>
+        <li class="is-later"><span>4장</span><span>지금 만들고 있는 것</span></li>
+        <li class="is-later"><span>부록</span><span>역량 · 학력 · 수상 · 연락처</span></li>
+      </ol>
+      <p class="contents-note">시안에서는 표지와 2장만 구현했습니다.</p>
+    </nav>
+  </div>
+
+  <p class="cover-contact">서울 · <a href="mailto:mingdya@gmail.com">mingdya@gmail.com</a> · <a href="https://github.com/k-im-rose">GitHub</a></p>
+</section>
+
+<!-- ───────── 2장 ───────── -->
+<section class="chapter" id="ch2" aria-labelledby="ch2-title">
+  <header class="chapter-head">
+    <p class="chapter-no">2장</p>
+    <h2 id="ch2-title">일하면서 바꾼 것들</h2>
+    <p class="chapter-deck">대표적인 일 네 가지를 문제, 한 일, 결과 순서로 적는다. 자세한 업무 목록은 3장에 있다.</p>
+  </header>
+
+  <!-- 사례 1 -->
+  <article class="case" id="case-1">
+    <div class="row">
+      <aside class="side"><p class="side-label">사례 1</p><p>안지향<span class="br"></span>2024.11 – 2026.08</p></aside>
+      <div class="text">
+        <h3>투자대회 개편</h3>
+        <p class="case-sub">참여를 독려하는 대신 규칙을 바꿨다</p>
+      </div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">문제</span>참여는 오래 이어지지 않았고 상금 지출은 컸다. 수강생 25명에게 설문해 보니 문제는 의지가 아니라 계속 참여할 이유가 없는 구조였다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">한 일</span>인증할 때마다 쌓이는 포인트제를 만들고, 신청 없이 자동으로 참여되게 바꿨다. 개발팀에는 필요한 기능을 정리해 넘기고 개편안을 직접 보고했다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side">
+        <figure class="mini-bars" aria-label="월평균 수익 인증 건수 비교">
+          <figcaption>월평균 수익 인증</figcaption>
+          <div><span>개편 전</span><i style="--w:33.6%"></i><b>47건</b></div>
+          <div><span>개편 후</span><i style="--w:100%"></i><b>140건</b></div>
+        </figure>
+      </aside>
+      <div class="text"><p><span class="lead">결과</span>월평균 수익 인증이 <b class="n">47건에서 140건</b>으로 늘었고, 실제 운영 비용은 <b class="n">약 67%</b> 줄었다.</p></div>
+    </div>
+  </article>
+
+  <!-- 사례 2 -->
+  <article class="case" id="case-2">
+    <div class="row">
+      <aside class="side"><p class="side-label">사례 2</p><p>안지향</p></aside>
+      <div class="text">
+        <h3>입문 과정에서 정규반까지</h3>
+        <p class="case-sub">처음 만든 과정이 다음 과정으로 이어지게</p>
+      </div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">과제</span>저가 입문 과정을 새로 만들고, 그 과정이 고가 정규반과 심화반으로 이어지게 하는 일이었다. 심화반은 입사 한 달 차에 모집 체계 없이 맡았다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">한 일</span>입문 과정인 저위험 챌린지를 직접 기획하고 시작했다. 챌린지와 정규반 사이에는 10분짜리 1:1 입학 상담 단계를 제안해 넣고 상담 매뉴얼을 만들었다. 정규반 5기는 41명을 직접 모집했다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text">
+        <p><span class="lead">결과</span>챌린지 첫 기수는 목표 100명보다 많은 <b class="n">109명</b>이 모였고, 과제를 끝까지 해낸 수강생 비율은 1기 31%에서 2기 <b class="n">92%</b>가 됐다. 상담을 받은 사람의 정규반 결제율은 세 회차에 걸쳐 <b class="n">52%, 87%, 81%</b>였다.</p>
+        <p>직접 모집한 정규반 5기는 <b class="n">41명 전원</b>이 목표를 달성했고, 이어 운영한 7·9기도 달성률 100%였다. 5기의 심화반 전환율은 <b class="n">66%</b>로 역대 최고였다. 심화반은 목표 59명 대비 <b class="n">65명</b>을 모집했다.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 사례 3 -->
+  <article class="case" id="case-3">
+    <div class="row">
+      <aside class="side"><p class="side-label">사례 3</p><p>안지향 · 리드코치</p></aside>
+      <div class="text">
+        <h3>AI로 거르고 사람이 듣는 코치 품질관리</h3>
+        <p class="case-sub">외부 코치 여러 명의 세션을 리드코치 한 명이 점검하는 방법</p>
+      </div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">문제</span>코치마다 말하는 방식이 달라 수강생 경험이 들쭉날쭉했다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side"><p class="side-note">검토 기준<br>6개 항목 · 심각도 5단계</p></aside>
+      <div class="text"><p><span class="lead">한 일</span>먼저 코치 기준서를 쓰고, 그 기준으로 Claude 검토 프롬프트를 만들었다. 금지 발언, 질문 기법, 발화 비율 등 6개 항목과 심각도 5단계를 정했고, 화자가 불확실하면 판단을 보류하게 했다. AI가 걸러 낸 구간은 직접 들으며 톤과 태도를 확인했다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">결과</span>리드코치 한 명이 외부 코치 여러 명의 세션을 점검하는 흐름이 생겼다. 코치별 피드백은 Notion 상담 카드에 남겼다.</p></div>
+    </div>
+  </article>
+
+  <!-- 사례 4 -->
+  <article class="case" id="case-4">
+    <div class="row">
+      <aside class="side"><p class="side-label">사례 4</p><p>도화인터내셔널<span class="br"></span>2022.04 – 2024.10</p></aside>
+      <div class="text">
+        <h3>시즌 화보 8회</h3>
+        <p class="case-sub">콘셉트부터 최종 이미지까지 한 사람이</p>
+      </div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">상황</span>창업 초기 패션 회사에서 WGB와 포시즌, 두 브랜드의 시즌 화보를 2년 동안 만들었다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">한 일</span>무드보드와 모델·포토그래퍼·헤어메이크업 섭외, 스타일링, 현장 디렉팅, 후보정까지 모두 맡았다. 샘플이 늦게 나오는 일정에 맞춰 옷 없이 스타일링과 동선을 미리 짜고 현장에서 완성했다.</p></div>
+    </div>
+    <div class="row">
+      <aside class="side"></aside>
+      <div class="text"><p><span class="lead">결과</span>시즌 화보 <b class="n">8회</b>. 결과물은 브랜드 공식몰과 무신사에 쓰였다.</p></div>
+    </div>
+  </article>
+
+  <p class="chapter-end">다음 장 · 회사별 경력 <span>(시안 이후 구현)</span></p>
+</section>
+
+</main>
+
+<footer class="colophon">
+  <p>김민지 · 서울 · <a href="mailto:mingdya@gmail.com">mingdya@gmail.com</a></p>
+  <p><a href="{{ '/' | relative_url }}">현재 홈 보기</a> · <a href="{{ '/ai-lab/' | relative_url }}">AI 실험실</a></p>
+</footer>

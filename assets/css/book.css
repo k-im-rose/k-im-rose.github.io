@@ -1,0 +1,210 @@
+/* 에디토리얼(책 내지) 웹 이력서 — 시안
+   본문: Noto Serif KR / 표지·메타·숫자: Pretendard
+   읽는 칸 하나 + 왼쪽 여백 주석 칸. 모바일에서는 주석이 본문 위로 들어간다. */
+
+:root {
+  --paper: #F8F7F3;
+  --ink: #252723;
+  --sage: #797E73;
+  --sand: #B0A58E;
+  --rule: #d9d6cc;
+  --soft: #4a4c47;
+
+  --serif: "Noto Serif KR", "AppleMyungjo", serif;
+  --sans: Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
+
+  --body: 17.5px;      /* 본문 */
+  --lh: 1.9;           /* 본문 행간 */
+  --measure: 34em;     /* 읽는 칸 너비 ≈ 한 줄 40자 안팎 */
+  --side: 190px;       /* 여백 주석 칸 */
+  --gap: 56px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--body);
+  line-height: var(--lh);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration-color: var(--sand); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--ink); }
+
+/* ── 머리줄 (책의 running head처럼 얇게) ── */
+.runner {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 32px;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans); font-size: 13px; line-height: 1.4;
+}
+.runner-name { text-decoration: none; font-weight: 700; letter-spacing: -0.02em; }
+.runner-name span { font-weight: 400; color: var(--sage); margin-left: 6px; }
+.runner nav { display: flex; gap: 20px; }
+.runner nav a { text-decoration: none; color: var(--soft); }
+.runner nav a:hover { color: var(--ink); text-decoration: underline; }
+
+main { padding: 0 32px; }
+
+/* ── 표지: 여기서만 크게 ── */
+.cover {
+  max-width: 1080px; margin: 0 auto;
+  min-height: calc(100vh - 48px);
+  display: flex; flex-direction: column;
+  padding: 72px 0 40px;
+  font-family: var(--sans);
+}
+.cover-kicker { margin: 0; font-size: 13px; color: var(--sage); letter-spacing: 0.02em; }
+.cover-name {
+  margin: 18px 0 0;
+  font-size: clamp(88px, 15vw, 200px);
+  font-weight: 800; letter-spacing: -0.075em; line-height: 1;
+}
+.cover-sub { margin: 26px 0 64px; font-size: 16px; color: var(--soft); line-height: 1.6; }
+
+.cover-foot {
+  margin-top: auto; padding-top: 56px;
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px;
+  border-top: 1px solid var(--ink);
+  padding-top: 28px;
+}
+.hook-line {
+  margin: 0 0 18px;
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(24px, 2.6vw, 34px); line-height: 1.5; letter-spacing: -0.03em;
+}
+.hook-pick { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; color: var(--sage); }
+.hook-pick span { margin-right: 6px; }
+.hook-pick button {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink);
+  font: inherit; font-size: 11px; cursor: pointer;
+}
+.hook-pick button.on { background: var(--sage); border-color: var(--sage); color: #fff; font-weight: 700; }
+.hook-pick em { font-style: normal; color: var(--sand); font-weight: 600; margin-left: 6px; }
+
+.contents-title { margin: 6px 0 10px; font-size: 12px; color: var(--sage); }
+.contents ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.contents li { border-bottom: 1px solid var(--rule); font-size: 15px; line-height: 1.5; }
+.contents li > a, .contents li.is-later {
+  display: grid; grid-template-columns: 72px 1fr; padding: 10px 0; text-decoration: none;
+}
+.contents li > a span:first-child, .contents li.is-later span:first-child { color: var(--sage); font-size: 13px; }
+.contents li > a:hover { background: var(--sage); color: #fff; }
+.contents li > a:hover span:first-child { color: #fff; }
+.contents li.is-later { color: #a4a59d; }
+.contents-note { margin: 10px 0 0; font-size: 12px; color: var(--sage); }
+.cover-contact { margin: 40px 0 0; font-size: 13px; color: var(--soft); }
+
+/* ── 장 (chapter) ── */
+.chapter { max-width: calc(var(--side) + var(--gap) + var(--measure)); margin: 0 auto; padding: 120px 0 80px; }
+.chapter-head {
+  margin-left: calc(var(--side) + var(--gap));
+  max-width: var(--measure);
+  padding-bottom: 36px; margin-bottom: 64px;
+  border-bottom: 1px solid var(--rule);
+}
+.chapter-no { margin: 0 0 10px; font-family: var(--sans); font-size: 13px; color: var(--sage); letter-spacing: 0.04em; }
+.chapter-head h2 { margin: 0 0 20px; font-size: 32px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.35; }
+.chapter-deck { margin: 0; color: var(--soft); }
+
+/* 본문 줄: 왼쪽 주석 + 읽는 칸 */
+.row { display: grid; grid-template-columns: var(--side) minmax(0, var(--measure)); column-gap: var(--gap); }
+.text p { margin: 0 0 1.05em; }
+.side { font-family: var(--sans); font-size: 13px; line-height: 1.6; color: var(--sage); padding-top: 0.35em; }
+.side p { margin: 0 0 6px; }
+.side-label { color: var(--ink); font-weight: 700; }
+.side-note { color: var(--soft); }
+
+/* 사례 */
+.case { margin-bottom: 88px; }
+.case h3 { margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.45; }
+.case-sub { margin: 4px 0 26px !important; color: var(--sage); font-size: 17px; }
+
+/* 문단 첫머리의 작은 표제 (run-in head) */
+.lead {
+  font-family: var(--sans); font-size: 12.5px; font-weight: 700;
+  color: var(--sage); letter-spacing: 0.02em;
+  margin-right: 0.7em; vertical-align: 0.08em;
+}
+
+/* 숫자: 크게 하지 않고 같은 크기에서 또렷하게 */
+.n { font-family: var(--sans); font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+/* 꼭 필요한 비교만: 얇은 막대 두 줄 */
+.mini-bars { margin: 0; }
+.mini-bars figcaption { color: var(--soft); margin-bottom: 6px; }
+.mini-bars div { display: grid; grid-template-columns: 44px 1fr 42px; gap: 8px; align-items: center; font-size: 12px; }
+.mini-bars i { display: block; height: 6px; width: var(--w); background: var(--rule); }
+.mini-bars div:last-child i { background: var(--sage); }
+.mini-bars b { font-weight: 650; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 기록 표: 헤드헌터가 빠르게 훑는 용도 */
+.record { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.record caption { text-align: left; color: var(--soft); margin-bottom: 4px; }
+.record th, .record td { padding: 5px 0; border-top: 1px solid var(--rule); vertical-align: top; text-align: left; }
+.record th { font-weight: 400; color: var(--sage); padding-right: 8px; white-space: nowrap; }
+.record td { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.chapter-end {
+  margin: 0 0 0 calc(var(--side) + var(--gap));
+  padding-top: 20px; border-top: 1px solid var(--rule);
+  font-family: var(--sans); font-size: 13px; color: var(--sage);
+}
+.chapter-end span { color: #a4a59d; }
+
+.colophon {
+  max-width: 1080px; margin: 40px auto 0; padding: 28px 32px 48px;
+  border-top: 1px solid var(--ink);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  font-family: var(--sans); font-size: 13px; color: var(--soft);
+}
+.colophon p { margin: 0; }
+
+/* ── 태블릿: 주석 칸을 좁게 ── */
+@media (max-width: 1000px) {
+  :root { --side: 150px; --gap: 36px; }
+}
+
+/* ── 모바일: 한 칸. 주석은 본문 위 작은 글씨로 ── */
+@media (max-width: 760px) {
+  :root { --body: 16.5px; --lh: 1.85; }
+  .runner { padding: 12px 20px; }
+  .runner-name span { display: none; }
+  main { padding: 0 20px; }
+  .cover { min-height: auto; padding: 48px 0 32px; }
+  .cover-sub { font-size: 14.5px; }
+  .cover-foot { grid-template-columns: 1fr; gap: 40px; margin-top: 64px; }
+  .chapter { padding-top: 80px; }
+  .chapter-head { margin-left: 0; margin-bottom: 44px; }
+  .chapter-head h2 { font-size: 27px; }
+  .row { grid-template-columns: 1fr; }
+  .side { padding: 0; }
+  .side:empty { display: none; }
+  .side:not(:empty) { margin: 0 0 14px; }
+  .case .row:first-child .side { display: flex; gap: 10px; flex-wrap: wrap; }
+  .case .row:first-child .side br { display: none; }
+  .record, .mini-bars { max-width: 340px; padding: 12px 14px; background: #efede6; }
+  .side-note { border-left: 2px solid var(--sand); padding-left: 10px; }
+  .case { margin-bottom: 64px; }
+  .case h3 { font-size: 21px; }
+  .chapter-end { margin-left: 0; }
+  .colophon { padding: 24px 20px 40px; }
+}
+
+@media print {
+  .runner, .hook-pick, .contents-note, .chapter-end { display: none; }
+  body { background: #fff; font-size: 11pt; }
+  .cover { min-height: auto; }
+}
+.side .br { display: block; }
+@media (max-width: 760px) { .side .br { display: inline; } .side .br::before { content: " · "; } }
