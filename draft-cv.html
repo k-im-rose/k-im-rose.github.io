@@ -72,7 +72,7 @@ draft_page: true
         <dl>
           <dt>문제</dt><dd>참여는 오래 이어지지 않았고 상금 지출은 컸다. 수강생 25명에게 설문해 보니 문제는 의지가 아니라 계속 참여할 이유가 없는 구조였다.</dd>
           <dt>한 일</dt><dd>인증할 때마다 쌓이는 포인트제를 만들고, 신청 없이 자동으로 참여되게 바꿨다. 개발팀에는 필요한 기능을 정리해 넘기고 개편안을 직접 보고했다.</dd>
-          <dt>결과</dt><dd>월평균 수익 인증 <b>47건 → 140건</b>, 실제 운영 비용 <b>약 67% 절감</b>.
+          <dt class="res">결과</dt><dd class="res">월평균 수익 인증 <b>47건 → 140건</b>, 실제 운영 비용 <b>약 67% 절감</b>.
             <figure class="bars" aria-label="월평균 수익 인증 건수 비교">
               <div><span>개편 전</span><i style="--w:33.6%"></i><b>47건</b></div>
               <div><span>개편 후</span><i style="--w:100%"></i><b>140건</b></div>
@@ -87,7 +87,7 @@ draft_page: true
         <dl>
           <dt>과제</dt><dd>저가 입문 과정을 새로 만들고, 그 과정이 고가 정규반과 심화반으로 이어지게 하는 일. 심화반은 입사 한 달 차에 모집 체계 없이 맡았다.</dd>
           <dt>한 일</dt><dd>입문 과정인 저위험 챌린지를 직접 기획하고 시작했다. 챌린지와 정규반 사이에 10분짜리 1:1 입학 상담 단계를 제안해 넣고 상담 매뉴얼을 만들었다. 정규반 5기는 41명을 직접 모집했다.</dd>
-          <dt>결과</dt><dd>
+          <dt class="res">결과</dt><dd class="res">
             <ul class="facts">
               <li>챌린지 첫 기수 목표 100명 대비 <b>109명</b> 모집. 과제를 100% 해낸 수강생 비율 1기 31% → 2기 <b>92%</b></li>
               <li>상담자의 정규반 결제율 세 회차 <b>52% → 87% → 81%</b></li>
@@ -104,7 +104,7 @@ draft_page: true
         <dl>
           <dt>문제</dt><dd>코치마다 말하는 방식이 달라 수강생 경험이 들쭉날쭉했다.</dd>
           <dt>한 일</dt><dd>신규 1:1 코칭 상품을 함께 기획하고 리드코치로 외부 코치 교육을 맡았다. 코치 기준서를 쓰고 그 기준으로 Claude 검토 프롬프트를 만들었다. 금지 발언, 질문 기법, 발화 비율 등 6개 항목과 심각도 5단계를 정했고, 화자가 불확실하면 판단을 보류하게 했다.</dd>
-          <dt>결과</dt><dd>AI가 1차로 걸러 낸 구간을 직접 들으며 톤과 태도를 확인하고, Notion 상담 카드에 코치별 피드백을 남기는 점검 흐름을 만들었다.</dd>
+          <dt class="res">결과</dt><dd class="res">AI가 1차로 걸러 낸 구간을 직접 들으며 톤과 태도를 확인하고, Notion 상담 카드에 코치별 피드백을 남기는 점검 흐름을 만들었다.</dd>
         </dl>
       </section>
 
@@ -133,7 +133,7 @@ draft_page: true
         <dl>
           <dt>맡은 일</dt><dd>WGB와 포시즌의 시즌 화보를 2년 동안 만들었다. 콘셉트와 무드보드, 모델·포토그래퍼·헤어메이크업 섭외, 스타일링, 현장 디렉팅, 후보정까지 전 과정을 맡았다.</dd>
           <dt>한 일</dt><dd>샘플이 늦게 나오는 일정에 맞춰 옷 없이 스타일링과 동선을 미리 짜고 현장에서 완성했다.</dd>
-          <dt>결과</dt><dd>시즌 화보 <b>8회</b>. 결과물은 브랜드 공식몰과 무신사에 쓰였다.</dd>
+          <dt class="res">결과</dt><dd class="res">시즌 화보 <b>8회</b>. 결과물은 브랜드 공식몰과 무신사에 쓰였다.</dd>
         </dl>
       </section>
 
@@ -242,3 +242,21 @@ draft_page: true
 </footer>
 
 </main>
+
+<div class="review" role="group" aria-label="면 색 시안 비교">
+  <span>면 시안</span>
+  <button type="button" class="on" data-fill="result">① 결과 칸 배경</button>
+  <button type="button" data-fill="company">② 회사 머리 띠</button>
+</div>
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search).get('fill');
+    var btns = document.querySelectorAll('.review button');
+    function set(v) {
+      document.body.dataset.fill = v;
+      btns.forEach(function (b) { b.classList.toggle('on', b.dataset.fill === v); });
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.fill); }); });
+    set(q === 'company' ? 'company' : 'result');
+  })();
+</script>

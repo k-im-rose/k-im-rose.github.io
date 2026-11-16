@@ -257,3 +257,34 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 
 /* 목차 줄 마우스 오버: 글자 폭은 그대로 두고 배경만 양옆으로 12px 넓힘 (줄바꿈 방지) */
 a.row:hover { padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
+
+/* ═════ 6차: 밝은 세이지 면 시안 ═════ */
+:root { --sage-tint: #E4E5DE; }   /* 밝은 세이지 #9EA297을 아이보리에 옅게 섞은 색 (본문 글자가 잘 읽히게) */
+
+/* ① 결과 칸 배경: dt·dd 한 줄을 하나의 옅은 면으로 */
+body[data-fill="result"] .case dt.res,
+body[data-fill="result"] .case dd.res { background: var(--sage-tint); border-bottom-color: transparent; }
+body[data-fill="result"] .case dt.res { padding-left: 14px; }
+body[data-fill="result"] .case dl { column-gap: 0; grid-template-columns: 92px 1fr; }   /* 72px + 20px 간격을 칸 안으로 → 본문 위치 그대로 */
+body[data-fill="result"] .case dt { padding-right: 20px; }
+body[data-fill="result"] .case dd.res { padding-right: 14px; }
+body[data-fill="result"] .bars div:first-child i { background: #cfd0c8; }
+
+/* ② 회사 머리 띠: 밝은 세이지 면, 글자 차콜. 글자 위치는 다른 줄과 맞추고 면만 양옆으로 */
+body[data-fill="company"] .job-head {
+  background: var(--sage-light); border-top: 0; border-bottom: 0;
+  padding: 18px 16px 16px; margin: 0 -16px;
+}
+body[data-fill="company"] .job-head > span { color: var(--ink); }
+
+/* 시안 비교 스위치 (시안 페이지 전용) */
+.review { position: fixed; right: 16px; bottom: 16px; z-index: 10; display: flex; gap: 6px; align-items: center; padding: 6px 8px 6px 14px; background: var(--ink); color: var(--paper); border-radius: 999px; font-size: 13px; }
+.review button { font: inherit; font-size: 13px; border: 0; border-radius: 999px; padding: 5px 12px; background: transparent; color: var(--paper); cursor: pointer; }
+.review button.on { background: var(--sage-light); color: var(--ink); font-weight: 700; }
+@media (max-width: 720px) {
+  .review { left: 12px; right: 12px; justify-content: center; }
+  body[data-fill="company"] .job-head { margin: 0 -12px; padding: 14px 12px 12px; }
+  body[data-fill="result"] .case dt.res { padding: 12px 12px 0; }
+  body[data-fill="result"] .case dd.res { padding: 2px 12px 14px; }
+}
+@media print { .review { display: none; } }
