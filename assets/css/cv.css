@@ -51,7 +51,7 @@ b { font-weight: 700; color: var(--ink); }
 
 .name {
   margin: 28px 0 0; font-family: var(--display); font-weight: 900; color: var(--ink);
-  font-size: clamp(110px, 17vw, 228px); line-height: .92; letter-spacing: -0.075em;
+  font-size: clamp(110px, 17vw, 228px); line-height: .92; letter-spacing: -0.03em;
 }
 .flow {
   margin: 34px 0 0; padding-top: 22px; border-top: 2px solid var(--ink);
@@ -205,7 +205,7 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
    여백은 글자 실제 윤곽(김민지, Pretendard 900) 기준으로 위·아래·좌·우 모두 0.1em이 되게 계산한 값 */
 .name span {
   display: inline-block; background: var(--ink); color: var(--paper);
-  padding: 0.092em 0.094em 0.092em 0.079em;
+  padding: 0.092em 0.049em 0.092em 0.079em;  /* 자간 -0.03em 기준 */
 }
 
 
