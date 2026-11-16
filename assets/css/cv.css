@@ -224,3 +224,7 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
   .case-head h3 { font-size: 20px; }
 }
 @media print { .case-head { position: static; } }
+
+/* 사례: 제목 세 줄(왼쪽 칸)이 끝난 다음 줄에서 본문(오른쪽 칸)이 시작되게 — 계단식 */
+.case-head { grid-row: 1; position: static; padding-top: 0; padding-bottom: 22px; }
+.case dl { grid-row: 2; }
