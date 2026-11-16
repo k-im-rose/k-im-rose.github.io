@@ -4,6 +4,18 @@ title: 김민지 — 웹 이력서 (시안)
 permalink: /draft/cv/
 draft_page: true
 ---
+<header class="site-head">
+  <a class="logo" href="{{ '/' | relative_url }}" aria-label="김민지 홈">김민지</a>
+  <nav class="cats" aria-label="카테고리">
+    <a class="on" href="#top" aria-current="page">이력서</a>
+    <span class="soon" title="준비 중">패션</span>
+    <span class="soon" title="준비 중">교육</span>
+    <a href="{{ '/ai-lab/' | relative_url }}">AI 실험실</a>
+    <span class="soon" title="준비 중">투자</span>
+    <span class="soon" title="준비 중">기록</span>
+  </nav>
+</header>
+
 <main class="sheet">
 
 <!-- ═════ 표지 ═════ -->
@@ -242,21 +254,3 @@ draft_page: true
 </footer>
 
 </main>
-
-<div class="review" role="group" aria-label="면 색 시안 비교">
-  <span>면 시안</span>
-  <button type="button" class="on" data-fill="result">① 결과 칸 배경</button>
-  <button type="button" data-fill="company">② 회사 머리 띠</button>
-</div>
-<script>
-  (function () {
-    var q = new URLSearchParams(location.search).get('fill');
-    var btns = document.querySelectorAll('.review button');
-    function set(v) {
-      document.body.dataset.fill = v;
-      btns.forEach(function (b) { b.classList.toggle('on', b.dataset.fill === v); });
-    }
-    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.fill); }); });
-    set(q === 'company' ? 'company' : 'result');
-  })();
-</script>
