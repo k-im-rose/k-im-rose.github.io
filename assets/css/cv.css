@@ -395,3 +395,7 @@ html { scroll-padding-top: 84px; }
   .case dt, .case dt.res { padding-left: 16px; padding-right: 16px; }
   .case dd, .case dd.res { padding-left: 16px; padding-right: 16px; }
 }
+
+/* 결과 목록의 '–'를 왼쪽 여백으로 내어 걸기 → 글자는 다른 본문과 같은 선(468px)에서 시작 */
+.facts li { padding-left: 0; }
+.facts li::before { left: -16px; }
