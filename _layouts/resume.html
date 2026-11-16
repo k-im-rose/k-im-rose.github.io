@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: '김민지 — 일의 기록' }}</title>
+  <meta name="description" content="김민지의 경력과 프로젝트. 교육 서비스 기획·운영, 브랜드 디자인, AI 학습과 웹서비스 제작.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}">
+</head>
+<body>
+{% comment %}웹 이력서 홈. 내용은 _includes/resume.html, 스타일은 assets/css/resume.css{% endcomment %}
+{% include resume.html %}
+<script src="{{ '/assets/js/resume.js' | relative_url }}"></script>
+</body>
+</html>
