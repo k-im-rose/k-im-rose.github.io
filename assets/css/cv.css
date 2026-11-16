@@ -237,17 +237,19 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 .case dl { grid-row: auto; }
 
 /* 대제목(차례 · 경력 · 지금 하는 일 · 부록) 시안 */
-/* ① 앞에 네모 도형 */
+/* ① 앞에 원 도형 */
 body[data-h="shape"] .toc h2::before,
 body[data-h="shape"] .chapter > h2::before {
-  content: ""; display: inline-block; width: 0.42em; height: 0.42em;
-  background: var(--sage-light); margin-right: 0.36em; vertical-align: 0.12em;
+  content: ""; display: inline-block; width: 0.42em; height: 0.42em; border-radius: 50%;
+  background: var(--sage-light); margin-right: 0.34em; vertical-align: 0.12em;
 }
 /* ② 밝은 세이지 배경 + 아이보리 글자 (이름 상자와 같은 방식) */
 body[data-h="box"] .toc h2,
 body[data-h="box"] .chapter > h2 {
   display: inline-block; background: var(--sage-light); color: var(--paper);
-  font-weight: 600; padding: 0.12em 0.36em 0.1em 0.3em;
+  font-weight: 600; line-height: 1;
+  /* 글자 윤곽 기준 위·아래 보이는 여백 0.135em (이전 0.27em의 절반) */
+  padding: 0.076em 0.36em 0.077em 0.3em;
 }
 
 /* 시안 비교 스위치 (시안 페이지 전용) */
