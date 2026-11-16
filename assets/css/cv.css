@@ -15,7 +15,7 @@
   --display: var(--sans);
 
   --pad: clamp(20px, 5vw, 72px);
-  --cols: minmax(0, 0.8fr) minmax(0, 1.45fr) 180px;
+  --cols: 240px minmax(0, 1fr) 170px;   /* 이름 칸 고정 → 내용 칸이 가까워지고 넓어짐 */
   --gap: 32px;
 
   --fs-body: 18.5px;
@@ -82,7 +82,7 @@ b { font-weight: 700; color: var(--ink); }
 .row > span { color: var(--text); }
 .row .yr { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .row.is-soon, .row.is-soon b, .row.is-soon span { color: #9b9c94; }
-a.row { transition: background .15s, padding .15s; }
+a.row { transition: background .15s; }
 a.row:hover { background: var(--sage); padding-left: 12px; padding-right: 12px; }
 a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 
@@ -145,7 +145,7 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 
 /* ═════ 태블릿 ═════ */
 @media (max-width: 1000px) {
-  :root { --cols: minmax(0, 0.7fr) minmax(0, 1.5fr) 150px; --gap: 24px; --fs-body: 18px; }
+  :root { --cols: 200px minmax(0, 1fr) 140px; --gap: 24px; --fs-body: 18px; }
   .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -245,12 +245,15 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 
 
 /* ═════ 5차: 사례 머리 ═════ */
-/* '사례 01'은 밝은 세이지 알약(글자 차콜), 그 아래 제목, 그 아래 부제 */
+/* '사례 01'은 밝은 세이지 알약(글자 아이보리), 그 아래 제목, 그 아래 부제 */
 .case-head { display: block; padding-bottom: 18px; }
 .case-head .case-no {
   display: inline-block; margin: 0 0 10px; padding: 3px 12px;
-  background: var(--sage-light); color: var(--ink); border-radius: 999px;
-  font-size: 13px; font-weight: 600; letter-spacing: 0.02em; line-height: 1.6;
+  background: var(--sage-light); color: var(--paper); border-radius: 999px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.02em; line-height: 1.6;
 }
 .case h3 { display: block; }
 .case h3 span { display: block; margin-top: 4px; }   /* 알약 / 제목 / 부제 세 줄 */
+
+/* 목차 줄 마우스 오버: 글자 폭은 그대로 두고 배경만 양옆으로 12px 넓힘 (줄바꿈 방지) */
+a.row:hover { padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
