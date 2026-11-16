@@ -245,12 +245,12 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 
 
 /* ═════ 5차: 사례 머리 ═════ */
-/* '사례 01'은 차콜 알약, 그 아래 제목과 부제를 한 줄에. 자리가 모자라면 부제 전체가 다음 줄로 */
+/* '사례 01'은 밝은 세이지 알약(글자 차콜), 그 아래 제목, 그 아래 부제 */
 .case-head { display: block; padding-bottom: 18px; }
 .case-head .case-no {
   display: inline-block; margin: 0 0 10px; padding: 3px 12px;
-  background: var(--ink); color: var(--paper); border-radius: 999px;
+  background: var(--sage-light); color: var(--ink); border-radius: 999px;
   font-size: 13px; font-weight: 600; letter-spacing: 0.02em; line-height: 1.6;
 }
-.case h3 { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 14px; row-gap: 2px; }
-.case h3 span { display: inline; margin-top: 0; }
+.case h3 { display: block; }
+.case h3 span { display: block; margin-top: 4px; }   /* 알약 / 제목 / 부제 세 줄 */
