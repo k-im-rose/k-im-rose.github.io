@@ -243,10 +243,10 @@ body[data-h="shape"] .chapter > h2::before {
   content: ""; display: inline-block; width: 0.42em; height: 0.42em; border-radius: 50%;
   background: var(--sage-light); margin-right: 0.34em; vertical-align: 0.12em;
 }
-/* ② 밝은 세이지 배경 + 아이보리 글자 (이름 상자와 같은 방식) */
+/* ② 밝은 세이지 띠(전체 폭) + 아이보리 글자 */
 body[data-h="box"] .toc h2,
 body[data-h="box"] .chapter > h2 {
-  display: inline-block; background: var(--sage-light); color: var(--paper);
+  display: block; background: var(--sage-light); color: var(--paper);   /* 아래 선 길이만큼 전체 폭, 글자는 왼쪽 */
   font-weight: 600; line-height: 1;
   /* 글자 윤곽 기준 위·아래 보이는 여백 0.135em (이전 0.27em의 절반) */
   padding: 0.076em 0.36em 0.077em 0.3em;
