@@ -10,7 +10,7 @@
   --rule: #d9d6cc;
   --soft: #4a4c47;
 
-  --serif: "Noto Serif KR", "AppleMyungjo", serif;
+  --serif: Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif; /* 고딕으로 통일 */
   --sans: Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
 
   --body: 17.5px;      /* 본문 */
