@@ -201,18 +201,13 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 /* ═════ 3차: 밝은 세이지 면 + 왼쪽 칸 활용 ═════ */
 :root { --sage-light: #9EA297; }   /* 글자용 세이지(#797E73)보다 밝은 면 전용 색 */
 
-/* 표지 시안 ① 이름 하이라이트: 이름 크기에 맞춘 상자, 글자는 바탕색 */
-body[data-cover="name"] .name span {
-  display: inline-block; background: var(--sage-light); color: var(--paper);
-  padding: 0.06em 0.16em 0.02em 0.1em;
+/* 표지: 이름 뒤 진한 차콜 상자, 이름은 바탕색
+   여백은 글자 실제 윤곽(김민지, Pretendard 900) 기준으로 위·아래·좌·우 모두 0.1em이 되게 계산한 값 */
+.name span {
+  display: inline-block; background: var(--ink); color: var(--paper);
+  padding: 0.092em 0.094em 0.092em 0.079em;
 }
 
-/* 표지 시안 ② 흐름 띠: 이름 아래 선 대신 한 줄 띠 */
-body[data-cover="band"] .flow {
-  border-top: 0; background: var(--sage-light); color: var(--ink);
-  padding: 18px 24px; margin-top: 36px;
-}
-body[data-cover="band"] .flow span { color: var(--paper); font-weight: 600; }
 
 /* 사례: 번호·제목·부제는 왼쪽 칸, 문제/한 일/결과는 내용 칸 */
 .job .body > .case { grid-column: 1 / 4; max-width: none; display: grid; grid-template-columns: var(--cols); column-gap: var(--gap); align-items: start; }
@@ -222,16 +217,10 @@ body[data-cover="band"] .flow span { color: var(--paper); font-weight: 600; }
 .case-head h3 span { margin-top: 6px; font-size: 16.5px; line-height: 1.55; }
 .case dl { grid-column: 2 / 4; max-width: var(--measure); }
 
-/* 시안 비교 스위치 (시안 페이지 전용) */
-.review { position: fixed; right: 16px; bottom: 16px; z-index: 10; display: flex; gap: 6px; align-items: center; padding: 6px 8px 6px 14px; background: var(--ink); color: var(--paper); border-radius: 999px; font-size: 13px; }
-.review button { font: inherit; font-size: 13px; border: 0; border-radius: 999px; padding: 5px 12px; background: transparent; color: var(--paper); cursor: pointer; }
-.review button.on { background: var(--sage-light); color: var(--ink); font-weight: 700; }
 
 @media (max-width: 720px) {
   .job .body > .case { display: block; }
   .case-head { position: static; padding-top: 0; margin-bottom: 14px; }
   .case-head h3 { font-size: 20px; }
-  body[data-cover="band"] .flow { padding: 14px 16px; }
-  .review { left: 12px; right: 12px; justify-content: center; }
 }
-@media print { .review { display: none; } .case-head { position: static; } }
+@media print { .case-head { position: static; } }

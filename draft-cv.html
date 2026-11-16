@@ -242,21 +242,3 @@ draft_page: true
 </footer>
 
 </main>
-
-<div class="review" role="group" aria-label="표지 시안 비교">
-  <span>표지 시안</span>
-  <button type="button" class="on" data-cover="name">① 이름 하이라이트</button>
-  <button type="button" data-cover="band">② 흐름 띠</button>
-</div>
-<script>
-  (function () {
-    var q = new URLSearchParams(location.search).get('cover');
-    var btns = document.querySelectorAll('.review button');
-    function set(v) {
-      document.body.dataset.cover = v;
-      btns.forEach(function (b) { b.classList.toggle('on', b.dataset.cover === v); });
-    }
-    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.cover); }); });
-    set(q === 'band' ? 'band' : 'name');
-  })();
-</script>
