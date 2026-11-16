@@ -242,21 +242,3 @@ draft_page: true
 </footer>
 
 </main>
-
-<div class="review" role="group" aria-label="대제목 시안 비교">
-  <span>대제목 시안</span>
-  <button type="button" class="on" data-h="shape">① 원 도형</button>
-  <button type="button" data-h="box">② 배경색</button>
-</div>
-<script>
-  (function () {
-    var q = new URLSearchParams(location.search).get('h');
-    var btns = document.querySelectorAll('.review button');
-    function set(v) {
-      document.body.dataset.h = v;
-      btns.forEach(function (b) { b.classList.toggle('on', b.dataset.h === v); });
-    }
-    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.h); }); });
-    set(q === 'box' ? 'box' : 'shape');
-  })();
-</script>
