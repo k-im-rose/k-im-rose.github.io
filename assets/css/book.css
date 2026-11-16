@@ -208,3 +208,55 @@ main { padding: 0 32px; }
 }
 .side .br { display: block; }
 @media (max-width: 760px) { .side .br { display: inline; } .side .br::before { content: " · "; } }
+
+/* ───────── 2차 수정: 강약 다시 잡기 + 한 칸 흐름 ───────── */
+/* 머리줄 */
+.runner { font-size: 15px; padding-top: 16px; padding-bottom: 16px; }
+
+/* 표지: 이름(가장 강) → 한 줄 요약(중간) → 표지 머리말(약하지만 읽히게) */
+.cover-kicker { font-size: 18px; font-weight: 500; color: var(--soft); letter-spacing: -0.01em; }
+.cover-kicker::before { content: ""; display: inline-block; width: 28px; height: 2px; background: var(--sage); vertical-align: middle; margin: -3px 12px 0 0; }
+.cover-name { margin-top: 22px; }
+.cover-sub { font-size: clamp(21px, 2.2vw, 28px); font-weight: 600; color: var(--ink); letter-spacing: -0.035em; line-height: 1.5; margin-top: 30px; }
+.cover-sub .arrow { color: var(--sage); font-weight: 400; margin: 0 .25em; }
+.hook-pick { font-size: 14px; }
+.hook-pick button { width: 32px; height: 32px; font-size: 13px; }
+.contents-title { font-size: 15px; font-weight: 600; color: var(--ink); }
+.contents li { font-size: 17px; }
+.contents li > a span:first-child, .contents li.is-later span:first-child { font-size: 15px; }
+.contents li > a, .contents li.is-later { grid-template-columns: 84px 1fr; padding: 12px 0; }
+.contents-note { font-size: 14px; }
+.cover-contact { font-size: 15px; }
+
+/* 장: 읽는 칸 하나를 가운데에 */
+.chapter { max-width: var(--measure); }
+.chapter-head { margin-left: 0; }
+.chapter-no { font-size: 15px; font-weight: 600; }
+.chapter-end { margin-left: 0; font-size: 15px; }
+
+/* 사례 머리: 사례 번호 · 회사 · 기간 */
+.case-head { margin-bottom: 26px; }
+.case-meta { margin: 0 0 8px; font-family: var(--sans); font-size: 15px; color: var(--sage); line-height: 1.5; }
+.case-meta b { color: var(--ink); font-weight: 700; }
+.case h3 { font-size: 25px; }
+.case-sub { margin: 4px 0 0 !important; font-size: 18px; }
+.lead { font-size: 14px; }
+
+/* 비교 막대: 본문 안, 읽히는 크기로 */
+.mini-bars { margin: 8px 0 1.4em; padding: 18px 20px; background: #efede6; max-width: 460px; font-family: var(--sans); }
+.mini-bars figcaption { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.mini-bars div { grid-template-columns: 62px 1fr 56px; gap: 12px; font-size: 14px; line-height: 2; color: var(--soft); }
+.mini-bars i { height: 10px; }
+.mini-bars b { font-size: 15px; }
+
+.colophon { font-size: 15px; }
+
+@media (max-width: 760px) {
+  .cover-kicker { font-size: 16px; }
+  .cover-sub { font-size: 19px; }
+  .contents li { font-size: 16px; }
+  .case-meta { font-size: 14px; }
+  .case h3 { font-size: 22px; }
+  .case-sub { font-size: 16.5px; }
+  .mini-bars { max-width: none; padding: 14px 16px; }
+}
