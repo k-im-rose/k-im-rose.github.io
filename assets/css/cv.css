@@ -358,3 +358,21 @@ html { scroll-padding-top: 84px; }
   html { scroll-padding-top: 116px; }
 }
 @media print { .site-head { display: none; } }
+
+/* ═════ 9차 ═════ */
+/* 결과 상자 바로 위 줄의 구분선 없앰 (상자로 구분되므로) */
+.case dt:has(+ dd + dt.res), .case dd:has(+ dt.res) { border-bottom-color: transparent; }
+@media (max-width: 720px) { .case dt.res { border-top-color: transparent; } }
+
+/* 로고: 상자 안 여백을 넉넉하게. 글자 윤곽 기준 네 방향 0.3em */
+.logo { font-size: 20px; padding: 0.292em 0.249em 0.292em 0.279em; }
+
+/* 카테고리 띠: 더 두껍게, 글자는 모두 아이보리(선택된 칸만 밝은 세이지) */
+.cats { padding: 8px; gap: 6px; }
+.cats a, .cats span { padding: 9px 18px; font-size: 14px; }
+.cats .soon { color: var(--paper); }
+@media (max-width: 720px) {
+  .logo { font-size: 18px; }
+  .cats { padding: 6px; gap: 4px; }
+  .cats a, .cats span { padding: 8px 14px; font-size: 13px; }
+}
