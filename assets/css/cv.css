@@ -228,3 +228,31 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 /* 사례: 제목 세 줄(왼쪽 칸)이 끝난 다음 줄에서 본문(오른쪽 칸)이 시작되게 — 계단식 */
 .case-head { grid-row: 1; position: static; padding-top: 0; padding-bottom: 22px; }
 .case dl { grid-row: 2; }
+
+/* ═════ 4차 ═════ */
+/* 사례 머리: 다시 오른쪽 내용 칸. '사례 01'과 제목을 한 줄에 나란히, 부제는 제목 아래 */
+.job .body > .case { grid-column: 2 / 4; display: block; max-width: var(--measure); }
+.case-head { display: flex; align-items: baseline; gap: 0 18px; padding-bottom: 18px; }
+.case-head .case-no { margin: 0; flex: none; }
+.case dl { grid-row: auto; }
+
+/* 대제목(차례 · 경력 · 지금 하는 일 · 부록) 시안 */
+/* ① 앞에 네모 도형 */
+body[data-h="shape"] .toc h2::before,
+body[data-h="shape"] .chapter > h2::before {
+  content: ""; display: inline-block; width: 0.42em; height: 0.42em;
+  background: var(--sage-light); margin-right: 0.36em; vertical-align: 0.12em;
+}
+/* ② 밝은 세이지 배경 + 아이보리 글자 (이름 상자와 같은 방식) */
+body[data-h="box"] .toc h2,
+body[data-h="box"] .chapter > h2 {
+  display: inline-block; background: var(--sage-light); color: var(--paper);
+  font-weight: 600; padding: 0.12em 0.36em 0.1em 0.3em;
+}
+
+/* 시안 비교 스위치 (시안 페이지 전용) */
+.review { position: fixed; right: 16px; bottom: 16px; z-index: 10; display: flex; gap: 6px; align-items: center; padding: 6px 8px 6px 14px; background: var(--ink); color: var(--paper); border-radius: 999px; font-size: 13px; }
+.review button { font: inherit; font-size: 13px; border: 0; border-radius: 999px; padding: 5px 12px; background: transparent; color: var(--paper); cursor: pointer; }
+.review button.on { background: var(--sage-light); color: var(--ink); font-weight: 700; }
+@media (max-width: 720px) { .review { left: 12px; right: 12px; justify-content: center; } .case-head { gap: 0 12px; } }
+@media print { .review { display: none; } }
