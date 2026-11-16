@@ -2,13 +2,17 @@
 layout: shell
 ---
 <main class="section">
-  <div class="section-head">
+  <div class="section-head{% if page.pdf %} has-pdf{% endif %}">
     <span class="meta"><span class="idx">00</span><span class="cat">Profile</span></span>
     <h1 class="section-title">{{ page.title }}</h1>
+    {% comment %}Only pages that set `pdf:` in front matter get the download button{% endcomment %}
+    {% if page.pdf %}<a class="pdf-btn" href="{{ page.pdf | relative_url }}" download="{{ page.pdf_name }}">PDF 다운로드 ↓</a>{% endif %}
   </div>
   <div class="article">
     <div class="article-body">
+      {% if page.print_name %}<p class="print-only print-name">{{ page.print_name }}</p>{% endif %}
       {{ content }}
+      {% if page.pdf %}<p class="print-only print-footer">포트폴리오 · {{ site.url | remove: 'https://' }}</p>{% endif %}
     </div>
   </div>
 </main>
