@@ -399,3 +399,7 @@ html { scroll-padding-top: 84px; }
 /* 결과 목록의 '–'를 왼쪽 여백으로 내어 걸기 → 글자는 다른 본문과 같은 선(468px)에서 시작 */
 .facts li { padding-left: 0; }
 .facts li::before { left: -16px; }
+
+/* 사례 없이 바로 목록이 오는 회사(씨씨씨컴퍼니 등): 소개 문장 뒤 여백을 사례 앞 여백과 같게 */
+.lede + ul.plain { margin-top: 64px; }
+@media (max-width: 720px) { .lede + ul.plain { margin-top: 48px; } }
