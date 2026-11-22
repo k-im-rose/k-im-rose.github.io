@@ -419,3 +419,9 @@ html { scroll-padding-top: 84px; }
 /* 카테고리 띠: 바깥 여백 없이 선택 칸이 띠 높이를 꽉 채움 (검은 테두리가 보이지 않게) */
 .cats { padding: 0; gap: 0; }
 @media (max-width: 720px) { .cats { padding: 0; gap: 0; } }
+.thought-body figure { margin: 2em 0; }
+.thought-body img { display: block; width: 100%; height: auto; }
+.thought-body figcaption { margin-top: 8px; font-size: 15px; color: var(--soft); text-align: center; }
+.thought-body blockquote { margin: 1.8em 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--sage); color: var(--ink); font-size: 1.05em; }
+.thought-body blockquote p { margin: 0 0 .5em; }
+.thought-body blockquote p:last-child { margin-bottom: 0; }
