@@ -415,3 +415,7 @@ html { scroll-padding-top: 84px; }
 .thought-body { padding-top: 32px; }
 .thought-body p { margin: 0 0 1.1em; }
 .thought-body h2 { margin: 2em 0 .8em; font-size: 24px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.4; color: var(--ink); }
+
+/* 카테고리 띠: 바깥 여백 없이 선택 칸이 띠 높이를 꽉 채움 (검은 테두리가 보이지 않게) */
+.cats { padding: 0; gap: 0; }
+@media (max-width: 720px) { .cats { padding: 0; gap: 0; } }
