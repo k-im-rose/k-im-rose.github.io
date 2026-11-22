@@ -2,17 +2,7 @@
 layout: cv
 title: 김민지 — 웹 이력서
 ---
-<header class="site-head">
-  <a class="logo" href="{{ '/' | relative_url }}" aria-label="김민지 홈">김민지</a>
-  <nav class="cats" aria-label="카테고리">
-    <a class="on" href="#top" aria-current="page">이력서</a>
-    <span class="soon" title="준비 중">패션</span>
-    <span class="soon" title="준비 중">교육</span>
-    <a href="{{ '/ai-lab/' | relative_url }}">AI 실험실</a>
-    <span class="soon" title="준비 중">투자</span>
-    <span class="soon" title="준비 중">기록</span>
-  </nav>
-</header>
+{% include cv-head.html active='cv' %}
 
 <main class="sheet">
 
@@ -30,18 +20,6 @@ title: 김민지 — 웹 이력서
   <h1 class="name"><span>김민지</span></h1>
 
   <p class="flow">약 8년 · 패션 브랜드 비주얼 디렉팅 <span>→</span> 투자 교육 서비스 기획·운영 <span>→</span> AI로 직접 만들기</p>
-
-  <div class="hook" aria-live="polite">
-    <p class="hook-line" id="hook-line">지원하지 않은 회사에서 연락이 왔다.</p>
-    <div class="hook-pick" role="group" aria-label="첫 문장 후보 고르기">
-      <span>첫 문장 후보 · 미확정</span>
-      <button type="button" class="on" data-hook="지원하지 않은 회사에서 연락이 왔다.">A</button>
-      <button type="button" data-hook="나를 채용한 사람은 이력서를 보지 않았다." data-note="사실 확인 필요">B</button>
-      <button type="button" data-hook="팀장이 나를 자기 팀으로 데려갔다. 몇 년 뒤에는 자기 회사로 데려갔다.">C</button>
-      <button type="button" data-hook="아무도 시키지 않은 모임을 열었다. 그곳에서 다음 직장이 정해졌다.">D</button>
-      <em id="hook-note"></em>
-    </div>
-  </div>
 </header>
 
 <!-- ═════ 흐름 (About 확정 전, 원고의 핵심 경력 중 이야기 부분) ═════ -->
@@ -51,7 +29,6 @@ title: 김민지 — 웹 이력서
     <p>패션 회사에서는 같은 팀장이 나를 두 번 데려갔다. 처음엔 자기 팀으로, 다음엔 자기 회사로. 그곳에서 시즌 화보 8회를 기획부터 후보정까지 만들었다.</p>
     <p>투자 교육 회사에서는 수강생으로 시작해 그 회사 대표에게 스카우트됐다. 2개월 계약으로 들어가 성과를 근거로 연봉 협상을 세 번 했다.</p>
     <p>지금은 AI 에이전트 과정에서 배우며 웹서비스를 직접 만든다. 첫 서비스는 배포해 실제로 쓰고 있다.</p>
-    <p class="todo">[About · 훅 확정 후 작성]</p>
   </div>
 </section>
 
@@ -126,7 +103,6 @@ title: 김민지 — 웹 이력서
           <li><b>총회</b> 회당 120~130명이 모이는 수강생 행사. 1회는 장소, 프로그램, 대본, 진행까지 총괄</li>
           <li><b>VOD 제작</b> 대표가 직접 찍던 강의 3편을 AI 음성 강의로 전환. 대본, PPT 템플릿, ElevenLabs 음성 제작</li>
         </ul>
-        <p class="see">교육 프로젝트 자세히 보기 → 02 교육 <em>준비 중</em></p>
       </section>
     </div>
   </article>
@@ -153,7 +129,6 @@ title: 김민지 — 웹 이력서
           <li><b>창업 초기 운영</b> CS, 포장과 발송, 의류 소싱, 공장 방문까지 직접 함</li>
           <li><b>콘텐츠</b> 상세페이지, 썸네일, 광고 이미지, SNS 콘텐츠 제작</li>
         </ul>
-        <p class="see">화보 보기 → 01 패션 <em>준비 중</em></p>
       </section>
     </div>
   </article>
@@ -169,7 +144,6 @@ title: 김민지 — 웹 이력서
         <li><b>브랜드 첫 화보</b> 혼자 시작하고 여성 스타일링 전담. 이후 스타일링 문의가 늘었고 시장에 비슷한 제품이 여럿 나옴</li>
         <li><b>팀 자료 정리</b> 디자인 파일과 문서의 폴더 구조를 새로 짬</li>
       </ul>
-      <p class="see">브랜드 작업 보기 → 01 패션 <em>준비 중</em></p>
     </div>
   </article>
 
@@ -213,7 +187,7 @@ title: 김민지 — 웹 이력서
     <header class="row job-head"><b>이 웹사이트</b><span>기획 · 정보 구조 · 디자인 · 개발</span><b class="yr">2026</b></header>
     <div class="body">
       <p class="lede">기획, 정보 구조, 디자인, 개발까지 AI 코딩 도구로 직접 만들었다.</p>
-      <p class="links"><a href="{{ '/ai-lab/' | relative_url }}">AI 프로젝트 자세히 보기 → 03 AI 실험실</a></p>
+      <p class="links"><a href="{{ '/ai-lab/' | relative_url }}">AI 프로젝트 자세히 보기 → AI 작업실</a></p>
     </div>
   </article>
 </section>
@@ -240,9 +214,7 @@ title: 김민지 — 웹 이력서
   </div>
 
   <h3 class="sub">포트폴리오</h3>
-  <div class="row is-soon"><b>01 패션</b><span>// 브랜드 디자인 · 시즌 화보 · 비주얼 디렉팅</span><b class="yr">준비 중</b></div>
-  <div class="row is-soon"><b>02 교육</b><span>// 교육 과정 기획 · 모집과 전환 · 참여 구조 개편 · 코치 품질관리</span><b class="yr">준비 중</b></div>
-  <a class="row" href="{{ '/ai-lab/' | relative_url }}"><b>03 AI 실험실</b><span>// 실무 AI 활용 · 웹서비스 개발 · AI 에이전트 학습</span><b class="yr">보기 →</b></a>
+  <a class="row" href="{{ '/ai-lab/' | relative_url }}"><b>AI 작업실</b><span>// 실무 AI 활용 · 웹서비스 개발 · AI 에이전트 학습</span><b class="yr">보기 →</b></a>
 </section>
 
 <footer class="foot">

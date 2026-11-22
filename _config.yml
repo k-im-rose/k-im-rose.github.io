@@ -11,3 +11,7 @@ timezone: Asia/Seoul
 github_username: k-im-rose
 header_pages:
   - about.md
+collections:
+  thoughts:
+    output: true
+    permalink: /thoughts/:name/
