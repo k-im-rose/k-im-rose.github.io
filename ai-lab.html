@@ -6,39 +6,8 @@ permalink: /ai-lab/
 {% include cv-head.html active='ai' %}
 <main class="sheet">
 
-  <section class="chapter lab-intro">
-    <h2>AI 작업실</h2>
-    <div class="intro lab-line">
-      <p class="label">[지금 하는 공부]</p>
-      <div class="intro-body">
-        <p>모두의연구소 AI 에이전트 과정 3기(2026.10 – 2027.04)에서 바이브 코딩, 프롬프트 엔지니어링, 멀티 에이전트를 배우고 있다.</p>
-      </div>
-    </div>
-    <div class="intro lab-line">
-      <p class="label">[쓰는 도구]</p>
-      <div class="intro-body">
-        <p>Claude Code · Claude · ChatGPT · Gemini · ElevenLabs · Git · GitHub · Supabase · Render</p>
-      </div>
-    </div>
-    <div class="intro lab-line">
-      <p class="label">[할 수 있는 일]</p>
-      <div class="intro-body">
-        <p>필요한 도구를 기획하고, AI 코딩 도구와 함께 만들고, 배포해서 직접 쓰면서 고친다. 아래 작업은 모두 그렇게 만들었다.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="chapter" id="help">
-    <h2>회사에서 쓸 수 있는 일</h2>
-    <div class="row head-row"><b>문제</b><span>어떻게 푸는가</span><b class="yr">근거</b></div>
-    <div class="row"><b>매일 반복되는 조사·정리</b><span>하는 일을 단계로 쪼개 AI가 하는 칸과 사람이 확인하는 칸을 나눕니다. 매일 2~3시간 걸리던 뉴스 정리 작업으로 설계했습니다.</span><b class="yr"><a href="{% post_url 2026-10-26-computational-thinking %}">투자 뉴스 브리핑</a></b></div>
-    <div class="row"><b>사람이 다 확인하기 어려운 품질 점검</b><span>점검 기준서를 쓰고 그 기준으로 AI 검토 프롬프트를 만들었습니다. AI가 걸러 낸 구간만 사람이 직접 듣고 확인합니다. 실무에 적용했습니다.</span><b class="yr"><a href="{{ '/' | relative_url }}#anjihyang">경력 소개 사례 03</a></b></div>
-    <div class="row"><b>반복해서 찾고 잊어버리는 지식</b><span>쓰는 사람의 흐름에 맞춘 학습 서비스를 기획부터 배포까지 혼자 만들었습니다. 지금도 매일 쓰며 고칩니다.</span><b class="yr"><a href="{% post_url 2026-11-15-agmwo %}">아그뭐</a></b></div>
-    <div class="row"><b>현업 요구를 작은 도구로</b><span>요청을 말로 정리하고, 결과를 보고, 고쳐 달라고 하는 과정을 기록으로 남깁니다. 어떤 요청이 어떻게 반영됐는지 그대로 볼 수 있습니다.</span><b class="yr"><a href="{% post_url 2026-10-30-nyangi-ramen-shop %}">냥이의 라면가게</a></b></div>
-  </section>
-
   <section class="chapter" id="works">
-    <h2>작업 차례</h2>
+    <h2>작업</h2>
     {% assign items = site.posts | where: "section", "ai-lab" %}
     {% for post in items %}
     {% assign parts = post.title | split: ' — ' %}
