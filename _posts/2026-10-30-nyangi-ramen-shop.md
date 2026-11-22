@@ -1,8 +1,10 @@
 ---
-layout: post
+layout: work
 title: "냥이의 라면가게 — 아이를 위한 3D 라면 요리 게임"
 date: 2026-10-30 21:00:00 +0900
 section: ai-lab
+tech: "Three.js · HTML/CSS/JavaScript · Web Audio · Claude Code"
+summary: "7~9세 아이가 순서와 주문 기억을 연습하도록 만든 3D 라면 요리 게임"
 ---
 
 <div class="game-embed">

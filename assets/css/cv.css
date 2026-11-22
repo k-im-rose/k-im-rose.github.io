@@ -425,3 +425,36 @@ html { scroll-padding-top: 84px; }
 .thought-body blockquote { margin: 1.8em 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--sage); color: var(--ink); font-size: 1.05em; }
 .thought-body blockquote p { margin: 0 0 .5em; }
 .thought-body blockquote p:last-child { margin-bottom: 0; }
+
+/* ═════ AI 작업실 ═════ */
+.lab-intro .lab-line { border-top: 0; padding: 0 0 10px; }
+.lab-intro .lab-line .intro-body p { margin: 0; }
+.head-row { color: var(--soft); font-size: 15px; border-top: 1px solid var(--rule); }
+.head-row b { color: var(--soft); font-weight: 500; }
+.row .yr a { text-decoration: none; border-bottom: 1px solid var(--sand); }
+.row .yr a:hover { border-bottom-color: var(--ink); }
+.work-row small { display: block; margin-top: 4px; font-size: 16px; color: var(--soft); }
+a.work-row:hover small { color: #fff; }
+#help .row > span, #works .row > span { line-height: 1.6; }
+@media (max-width: 720px) { .row { grid-template-columns: 1fr; row-gap: 4px; } .row .yr { text-align: left; } }
+
+/* ═════ AI 작업 상세 글 ═════ */
+.thought.work { max-width: 880px; }
+.thought .subtitle { margin: 10px 0 0; font-size: 20px; color: var(--soft); line-height: 1.5; }
+.work .thought-body h2 { margin: 2.4em 0 .8em; padding-top: 22px; border-top: 2px solid var(--ink); font-size: 28px; font-weight: 700; }
+.work .thought-body h3 { margin: 1.8em 0 .6em; font-size: 21px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); }
+.work .thought-body h4 { margin: 1.6em 0 .5em; font-size: 18px; font-weight: 700; color: var(--ink); }
+.work .thought-body ul, .work .thought-body ol { margin: 0 0 1.1em; padding-left: 1.3em; }
+.work .thought-body li { margin-bottom: 4px; }
+.work .thought-body hr { height: 24px; margin: 0; border: 0; }
+.work .thought-body code { font-size: .9em; padding: 1px 6px; background: #ecebe4; border-radius: 3px; }
+.work .thought-body pre { overflow-x: auto; margin: 0 0 1.4em; padding: 16px 18px; background: #ecebe4; border-radius: 6px; font-size: 14.5px; line-height: 1.6; }
+.work .thought-body pre code { padding: 0; background: none; }
+.work .thought-body table { display: block; width: 100%; overflow-x: auto; margin: 8px 0 2em; border-collapse: collapse; font-size: 16px; line-height: 1.6; }
+.work .thought-body th, .work .thought-body td { padding: 10px 16px 10px 0; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.work .thought-body th { font-size: 14.5px; font-weight: 600; color: var(--soft); border-bottom-color: var(--ink); white-space: nowrap; }
+.work .thought-body .game-embed { margin: 0 0 12px; border: 1px solid var(--rule); background: #ecebe4; }
+.work .thought-body .game-embed iframe { display: block; width: 100%; height: min(78vh, 760px); border: 0; }
+.work .thought-body .game-links { margin: 0 0 40px; font-size: 15px; color: var(--soft); }
+.work .thought-body .shot { margin: 24px 0 36px; }
+.work .thought-body .shot img { border: 1px solid var(--hair); border-radius: 8px; }
