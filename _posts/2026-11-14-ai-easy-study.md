@@ -38,8 +38,8 @@ AI 개발을 처음 배우는 나 자신을 위해 만들었다.
 Claude Code와 Claude Artifact를 활용해 개인 학습 사이트 **‘AI 개발 쉽게 공부하기’**를 만들었다.
 
 <figure class="shot">
-  <img src="/assets/images/ai-easy-study/01-structure.png" alt="AI 작업실 학습 사이트의 첫 화면. 상단에 교안 이동 메뉴와 전체 학습 지도 버튼, 왼쪽에 교안 목차가 보인다" loading="lazy">
-  <figcaption>학습 사이트 전체 구조. 상단 교안 이동 메뉴로 전체 교안을 고르고, 왼쪽 목차에서 수업 순서를 확인한다. 교안 본문은 일부러 싣지 않았다.</figcaption>
+  <img src="/assets/images/ai-easy-study/01-structure.png" alt="03-08 교안 화면. 상단에 교안 이동 메뉴와 전체 학습 지도 버튼, 왼쪽에 교안 목차가 보인다" loading="lazy">
+  <figcaption>학습 사이트 전체 구조. 03-08 교안을 예로 든 화면이다. 상단 교안 이동 메뉴로 전체 교안을 고르고, 왼쪽 목차에서 수업 순서를 확인한다. 교안 본문은 일부러 싣지 않았다.</figcaption>
 </figure>
 
 원래 교안의 핵심 개념을 유지하면서 내용을 쉬운 말로 다시 구성했다.
