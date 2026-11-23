@@ -79,14 +79,15 @@ b { font-weight: 700; color: var(--ink); }
 /* ═════ 공통 줄 표 ═════ */
 .row {
   display: grid; grid-template-columns: var(--cols); column-gap: var(--gap);
-  align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--rule);
+  align-items: baseline; padding: 14px 12px; border-bottom: 1px solid var(--rule);
   font-size: 18px; line-height: 1.5; color: var(--text); text-decoration: none;
 }
 .row > span { color: var(--text); }
-.row .yr { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.row .yr { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 400; font-size: 16px; color: var(--soft); }
+.thoughts-list .row { grid-template-columns: 1fr auto; }
 .row.is-soon, .row.is-soon b, .row.is-soon span { color: #9b9c94; }
 a.row { transition: background .15s; }
-a.row:hover { background: var(--sage); padding-left: 12px; padding-right: 12px; }
+a.row:hover { background: var(--sage); }
 a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 
 /* ═════ 장 제목 (레퍼런스의 Education / Experience) ═════ */
@@ -261,8 +262,7 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 .case h3 { display: block; }
 .case h3 span { display: block; margin-top: 4px; }   /* 알약 / 제목 / 부제 세 줄 */
 
-/* 목차 줄 마우스 오버: 글자 폭은 그대로 두고 배경만 양옆으로 12px 넓힘 (줄바꿈 방지) */
-a.row:hover { padding-left: 12px; padding-right: 12px; margin-left: -12px; margin-right: -12px; }
+/* 목차 줄 마우스 오버: 배경은 선의 양 끝에 맞추고, 글자는 양옆 12px 안쪽에 있음 (.row 기본 padding) */
 
 /* ═════ 6차: 밝은 세이지 면 시안 ═════ */
 :root { --sage-tint: #E4E5DE; }   /* 밝은 세이지 #9EA297을 아이보리에 옅게 섞은 색 (본문 글자가 잘 읽히게) */
