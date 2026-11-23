@@ -409,7 +409,7 @@ html { scroll-padding-top: 84px; }
 
 /* ═════ 짧은 생각 ═════ */
 .thoughts-list .lede { margin-bottom: 28px; }
-.thought { max-width: var(--measure); margin: 0 auto 0 0; padding-top: 24px; }
+.thought { max-width: none; margin: 0 auto 0 0; padding-top: 24px; }
 .thought .back { margin: 0 0 40px; font-size: 16px; }
 .thought .back a { text-decoration: none; color: var(--soft); }
 .thought .back a:hover { color: var(--ink); }
@@ -442,7 +442,7 @@ a.work-row:hover small { color: #fff; }
 @media (max-width: 720px) { .row { grid-template-columns: 1fr; row-gap: 4px; } .row .yr { text-align: left; } }
 
 /* ═════ AI 작업 상세 글 ═════ */
-.thought.work { max-width: 880px; }
+.thought.work { max-width: none; }
 .thought .subtitle { margin: 10px 0 0; font-size: 20px; color: var(--soft); line-height: 1.5; }
 .work .thought-body h2 { margin: 2.4em 0 .8em; padding-top: 22px; border-top: 2px solid var(--ink); font-size: 28px; font-weight: 700; }
 .work .thought-body h3 { margin: 1.8em 0 .6em; font-size: 21px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); }
