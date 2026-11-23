@@ -3,6 +3,7 @@ layout: work
 title: "Computational Thinking — 투자 뉴스 브리핑 자동화"
 date: 2026-10-26 09:00:00 +0900
 section: ai-lab
+published: false
 tech: "분해 · 패턴 인식 · 추상화 · 알고리즘 설계 · AI 에이전트 작업 순서"
 summary: "매일 2~3시간 걸리는 뉴스 정리를 AI가 하는 칸과 사람이 하는 칸으로 나눈 설계"
 ---
