@@ -4,7 +4,7 @@ title: "냥이의 라면가게 — 처음으로 바이브 코딩에 도전해 �
 date: 2026-10-30 21:00:00 +0900
 section: ai-lab
 tech: "Claude Code · Three.js · HTML · CSS · JavaScript"
-summary: "처음으로 바이브 코딩에 도전해 만든 3D 웹 게임. 디자인을 여러 번 고치며 화면 완성도를 높인 기록"
+summary: "처음으로 바이브 코딩으로 만든 3D 게임"
 ---
 
 <div class="game-embed">

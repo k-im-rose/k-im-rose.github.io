@@ -412,6 +412,7 @@ html { scroll-padding-top: 84px; }
 
 /* ═════ 짧은 생각 ═════ */
 .thoughts-list .lede { margin-bottom: 28px; }
+#works .lede { margin-bottom: 28px; }
 .thought { max-width: none; margin: 0 auto 0 0; padding-top: 24px; }
 .thought .back { margin: 0 0 40px; font-size: 16px; }
 .thought .back a { text-decoration: none; color: var(--soft); }
