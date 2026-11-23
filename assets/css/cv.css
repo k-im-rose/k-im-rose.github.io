@@ -464,3 +464,6 @@ a.work-row:hover small { color: #fff; }
 .work .thought-body .game-links { margin: 0 0 40px; font-size: 15px; color: var(--soft); }
 .work .thought-body .shot { margin: 24px 0 36px; }
 .work .thought-body .shot img { border: 1px solid var(--hair); border-radius: 8px; }
+
+/* 첫 장(AI 작업실 · 짧은 생각): 헤더 바로 아래로 올림 */
+.sheet > .chapter:first-of-type { margin-top: 14px; }
