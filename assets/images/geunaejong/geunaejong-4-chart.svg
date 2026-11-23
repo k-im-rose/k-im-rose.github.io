@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="720" height="360" fill="#ffffff"/>
+
+  <!-- 왼쪽: 재현율 -->
+  <text x="40" y="36" font-size="18" font-weight="700" fill="#1a1a1a">재현율</text>
+  <text x="40" y="58" font-size="13" fill="#6b6b6b">높을수록 좋음 · 0~100% 같은 축척 · 목표 90%</text>
+  <line x1="30" y1="110" x2="350" y2="110" stroke="#b5735c" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="36" y="104" font-size="12" fill="#b5735c">목표 90%</text>
+  <line x1="30" y1="290" x2="350" y2="290" stroke="#bcbab0" stroke-width="1"/>
+
+  <rect x="80" y="134" width="80" height="156" fill="#b8b8b8"/>
+  <rect x="200" y="142" width="80" height="148" fill="#3d3d3d"/>
+  <text x="120" y="126" font-size="16" font-weight="700" fill="#1a1a1a" text-anchor="middle">78%</text>
+  <text x="240" y="134" font-size="16" font-weight="700" fill="#1a1a1a" text-anchor="middle">74%</text>
+  <text x="120" y="312" font-size="14" fill="#333" text-anchor="middle">키워드</text>
+  <text x="240" y="312" font-size="14" fill="#333" text-anchor="middle">AI</text>
+
+  <!-- 오른쪽: 선별 시간 -->
+  <text x="410" y="36" font-size="18" font-weight="700" fill="#1a1a1a">선별 시간</text>
+  <text x="410" y="58" font-size="13" fill="#6b6b6b">짧을수록 좋음 · 기사 30건 기준</text>
+  <line x1="400" y1="290" x2="700" y2="290" stroke="#bcbab0" stroke-width="1"/>
+
+  <rect x="440" y="90" width="80" height="200" fill="#b8b8b8"/>
+  <rect x="560" y="262" width="80" height="28" fill="#3d3d3d"/>
+  <text x="480" y="82" font-size="16" font-weight="700" fill="#1a1a1a" text-anchor="middle">720초</text>
+  <text x="600" y="254" font-size="16" font-weight="700" fill="#1a1a1a" text-anchor="middle">53~101초</text>
+  <text x="480" y="312" font-size="14" fill="#333" text-anchor="middle">사람</text>
+  <text x="600" y="312" font-size="14" fill="#333" text-anchor="middle">AI</text>
+
+  <text x="40" y="330" font-size="12" fill="#6b6b6b">재현율: 막대 높이는 0~100%를 같은 축척으로 나타냄</text>
+  <text x="40" y="348" font-size="12" fill="#6b6b6b">선별 시간: 같은 기사 30건을 사람은 720초, AI는 53~101초에 선별</text>
+</svg>
