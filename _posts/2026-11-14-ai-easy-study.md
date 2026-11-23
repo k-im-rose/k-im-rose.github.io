@@ -57,8 +57,8 @@ Claude Code와 Claude Artifact를 활용해 개인 학습 사이트 **‘AI 개�
 그래서 설명을 돕는 그림과 비교표, 직접 값을 바꿔 볼 수 있는 체험 기능을 추가했다.
 
 <figure class="shot">
-  <img src="/assets/images/ai-easy-study/02-concept.png" alt="예시 화면. 가상의 주방 앱으로 두 방식을 비교하는 표와, 버튼을 눌러 단계별로 바뀌는 흐름 그림이 보인다" loading="lazy">
-  <figcaption>개념 학습 기능의 예시 화면. 비교표와 단계 버튼으로 그림을 한 단계씩 보는 방식이다. 화면 속 내용은 설명을 위해 직접 만든 예시다.</figcaption>
+  <img src="/assets/images/ai-easy-study/02-concept.png" alt="03-08 교안의 개념 그림 화면. 표의 행을 단계별로 나누어 보여 주는 흐름도가 보인다" loading="lazy">
+  <figcaption>개념 학습 기능. 03-08 교안의 한 수업을 예로 든 화면이다. 개념 그림을 단계별로 나누어 보여 준다.</figcaption>
 </figure>
 
 학습 중에는 내 말로 내용을 정리할 수 있고, 교안 마지막에는 객관식 퀴즈로 이해도를 확인할 수 있게 했다.
@@ -66,8 +66,8 @@ Claude Code와 Claude Artifact를 활용해 개인 학습 사이트 **‘AI 개�
 틀린 문제는 관련 수업으로 돌아가 다시 읽을 수 있도록 연결했다. 무엇을 적어야 할지 막막한 질문에는 예시 답안도 추가했다.
 
 <figure class="shot">
-  <img src="/assets/images/ai-easy-study/03-review.png" alt="예시 화면. 객관식 퀴즈에서 오답과 정답을 표시하고, 관련 수업 다시 보기 버튼과 내 말로 적어보기 칸과 예시 답안이 보인다" loading="lazy">
-  <figcaption>복습 기능의 예시 화면. 틀린 문제에서 관련 수업으로 돌아가고, 내 말로 적는 칸에는 예시 답안을 함께 보여 준다. 퀴즈 문제는 직접 만든 예시다.</figcaption>
+  <img src="/assets/images/ai-easy-study/03-review.png" alt="03-08 교안의 내 말로 적어보기 화면. 입력 칸과 예시 답안 보기 버튼이 보인다" loading="lazy">
+  <figcaption>복습 기능. 03-08 교안 끝의 내 말로 적어보기 칸이다. 칸마다 예시 답안을 펼쳐 볼 수 있다. 객관식 퀴즈는 교안 끝에 모여 있다.</figcaption>
 </figure>
 
 ### 반복되는 세 가지 작업을 자동화하기
