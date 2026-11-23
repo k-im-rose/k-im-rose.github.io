@@ -48,12 +48,13 @@ b { font-weight: 700; color: var(--ink); }
 .contact-line span { margin: 0 6px; opacity: .5; }
 .contact a { text-decoration: none; }
 .contact a:hover { text-decoration: underline; }
-.contact .pdf { display: inline-block; margin-top: 10px; padding: 4px 16px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; font-weight: 600; }
-.contact .pdf:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+.name-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.cover-pdf { flex: none; margin-bottom: 0; padding: 4px 16px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap; color: var(--ink); }
+.cover-pdf:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
 
 .name {
   margin: 28px 0 0; font-family: var(--display); font-weight: 900; color: var(--ink);
-  font-size: clamp(99px, 15.3vw, 205px); line-height: .92;   /* 10% 줄임 */ letter-spacing: -0.03em;
+  font-size: clamp(79px, 12.24vw, 164px); line-height: .92;   /* 20% 줄임 */ letter-spacing: -0.03em;
 }
 .flow {
   margin: 34px 0 0; padding-top: 22px; border-top: 2px solid var(--ink);
@@ -159,7 +160,9 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
   .contact { text-align: left; font-size: 15px; }
   .contact-line { font-size: 12px; }
   .kicker { font-size: 17px; }
-  .name { font-size: clamp(79px, 24.3vw, 126px); margin-top: 18px; }
+  .name { font-size: clamp(63px, 19.44vw, 101px); margin-top: 18px; }
+  .name-row { display: block; }
+  .cover-pdf { display: table; margin: 14px 0 0 auto; }
   .flow { font-size: 19px; margin-top: 24px; }
   .hook-line { font-size: 25px; }
   .hook-pick { font-size: 14px; }
@@ -187,7 +190,7 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
   :root { --fs-body: 10.5pt; --lh-body: 1.65; --fs-meta: 9.5pt; --gap: 18px; }
   body { background: #fff; }
   .sheet { padding: 0; max-width: none; }
-  .hook-pick, .contact .pdf, .toc, .foot a, .see em, .todo { display: none; }
+  .hook-pick, .cover-pdf, .toc, .foot a, .see em, .todo { display: none; }
   .name { font-size: 64pt; }
   .flow { font-size: 14pt; }
   .hook-line { font-size: 17pt; }
