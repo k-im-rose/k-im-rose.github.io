@@ -1,6 +1,6 @@
 ---
 layout: work
-title: "그내종. 그래서 내 종목은? — 내 투자 이유를 이해하고, 필요한 경제 뉴스를 골라주는 AI 브리핑 서비스"
+title: "그내종: 그래서 내 종목은? — 내 투자 이유를 이해하고, 필요한 경제 뉴스를 골라주는 AI 브리핑 서비스"
 date: 2026-11-23 18:00:00 +0900
 section: ai-lab
 tech: "Claude Code · Python · LLM · TTS · GitHub Pages"
@@ -8,9 +8,9 @@ summary: "내 투자 이유를 기준으로 경제 뉴스를 고르고, 음성 �
 ---
 
 <div class="game-embed">
-  <iframe src="https://k-im-rose.github.io/geunaejong-demo/" title="그내종 데모" loading="lazy"></iframe>
+  <iframe src="https://k-im-rose.github.io/geunaejong-demo/home.html" title="그내종 데모" loading="lazy"></iframe>
 </div>
-<p class="game-links"><a href="https://k-im-rose.github.io/geunaejong-demo/" target="_blank" rel="noopener">서비스 체험하기</a> · <a href="https://github.com/k-im-rose/aiffel/tree/investment-ai-briefing/investment-ai-briefing" target="_blank" rel="noopener">GitHub 보기</a></p>
+<p class="game-links"><a href="https://k-im-rose.github.io/geunaejong-demo/home.html" target="_blank" rel="noopener">서비스 체험하기</a> · <a href="https://github.com/k-im-rose/aiffel/tree/investment-ai-briefing/investment-ai-briefing" target="_blank" rel="noopener">GitHub 보기</a></p>
 
 **내 투자 이유를 이해하고, 필요한 경제 뉴스를 골라주는 AI 브리핑 서비스**
 
