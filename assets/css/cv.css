@@ -479,3 +479,22 @@ a.work-row:hover small { color: #fff; }
 /* 짧은 생각 목록: 제목은 한 줄로 나열 (이 목록에만 적용) */
 .thoughts-list .row { grid-template-columns: minmax(0, 1fr) auto; }
 .thoughts-list .row b:first-child { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ═════ 최종 개편: 원고 반영에 필요한 보정 ═════ */
+.bars figcaption { margin-top: 4px; font-size: 13.5px; color: var(--soft); line-height: 1.6; }
+.job .body > .lede + .lede { margin-top: 0; }
+.more + .skills, .skills + .more { margin-top: 56px; }
+
+/* 모바일: 표지·소개 사이 빈 공간을 줄여 차례와 경력까지 빨리 닿게 */
+@media (max-width: 720px) {
+  :root { --chapter-gap: 88px; }
+  .cover { padding-bottom: 36px; }
+  .intro { padding-top: 32px; }
+  .row { padding-top: 14px; padding-bottom: 14px; }
+}
+
+/* 모바일: 결과 상자 목록 표시를 안쪽으로 */
+@media (max-width: 720px) { .facts li { padding-left: 6px; } .facts li::before { left: -10px; } }
+
+/* 안지향 '그 밖에 맡은 일' 구분선을 옅게 */
+#anjihyang .more li { border-bottom-color: #ebe9e1; }
