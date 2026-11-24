@@ -36,8 +36,10 @@ permalink: /frame/
 .frame-grid { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
 .frame-item { margin: 0; position: relative; overflow: hidden; background: var(--hair); }
 .frame-play { all: unset; cursor: pointer; display: block; width: 100%; height: 100%; }
-.frame-play img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.frame-item video { display: block; width: 100%; height: 100%; object-fit: cover; background: #000; }
+.frame-play img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.frame-item video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+/* 전체 화면일 때도 세로 원본 비율을 유지하고 잘리지 않게 */
+.frame-item video:fullscreen, .frame-item video:-webkit-full-screen { width: 100%; height: 100%; object-fit: contain; background: #000; }
 @media (max-width: 720px) { .frame-grid { gap: 10px; } }
 </style>
 
