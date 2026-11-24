@@ -558,3 +558,15 @@ a.work-row:hover small { color: #fff; }
   .case + .case { margin-top: 64px; }
   .job .more { margin-top: 67px; }
 }
+
+/* 상단: '웹 이력서 · 2026' 삭제, 연락처를 큰 이름 오른쪽 위(이름 상자 윗선)에 맞춤 */
+.name-row { margin-top: 12px; align-items: stretch; }
+.name { margin-top: 0; }
+.name-side { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; }
+.name-side .contact-line { line-height: 1; margin-top: 2px; }
+@media (max-width: 720px) {
+  .name-row { display: flex; flex-direction: column; margin-top: 4px; }
+  .name-side { display: contents; }
+  .name-side .contact { order: -1; text-align: left; margin-bottom: 16px; }
+  .name-side .cover-pdf { align-self: flex-end; margin: 14px 0 0; }
+}
