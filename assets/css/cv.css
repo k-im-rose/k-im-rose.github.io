@@ -185,26 +185,6 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
   .foot { flex-direction: column; gap: 6px; font-size: 13px; }
 }
 
-/* ═════ 인쇄 / PDF ═════ */
-@media print {
-  @page { size: A4; margin: 16mm 14mm; }
-  :root { --fs-body: 10.5pt; --lh-body: 1.65; --fs-meta: 9.5pt; --gap: 18px; }
-  body { background: #fff; }
-  .sheet { padding: 0; max-width: none; }
-  .hook-pick, .cover-pdf, .toc, .foot a, .see em, .todo { display: none; }
-  .name { font-size: 64pt; }
-  .flow { font-size: 14pt; }
-  .hook-line { font-size: 17pt; }
-  .row { font-size: 10.5pt; padding: 6px 0; }
-  .job-head b:first-child { font-size: 13pt; }
-  .case h3 { font-size: 12pt; }
-  .case h3 span { font-size: 10.5pt; }
-  .chapter { margin-top: 28px; }
-  .chapter > h2 { font-size: 20pt; }
-  .case, .more, .row, .skills { break-inside: avoid; }
-  a { text-decoration: none; }
-}
-
 /* ═════ 3차: 밝은 세이지 면 + 왼쪽 칸 활용 ═════ */
 :root { --sage-light: #9EA297; }   /* 글자용 세이지(#797E73)보다 밝은 면 전용 색 */
 
@@ -569,4 +549,82 @@ a.work-row:hover small { color: #fff; }
   .name-side { display: contents; }
   .name-side .contact { order: -1; text-align: left; margin-bottom: 16px; }
   .name-side .cover-pdf { align-self: flex-end; margin: 14px 0 0; }
+}
+
+/* ═════════════════════════════════════════════════════════════
+   인쇄 / PDF — 웹 이력서(위 화면 디자인)를 A4 문서에 맞춰 적용
+   PDF는 이 페이지(index.html)를 그대로 인쇄해서 만든다: sh _scripts/resume-pdf.sh
+   ═════════════════════════════════════════════════════════════ */
+.print-label { display: none; }
+@media print {
+  @page { size: A4; margin: 13mm 14mm 14mm; background: #F8F7F3; }
+  :root { --paper: #F8F7F3; --cols: 136px minmax(0, 1fr) 118px; --gap: 14px; --fs-body: 9.4pt; --lh-body: 1.68; --fs-meta: 8.2pt; --measure: none; --chapter-gap: 30px; }
+  html, body { background: var(--paper); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-size: 9.4pt; line-height: 1.68; }
+  a { text-decoration: none; color: inherit; }
+  .site-head, .toc, .foot, .cover-pdf, .skip, .hook-pick { display: none !important; }
+  .sheet { max-width: none; padding: 0; }
+
+  /* 표지 */
+  .cover { padding-bottom: 0; }
+  .name-row { margin-top: 0; }
+  .name { font-size: 46pt; }
+  .name-side .contact-line { font-size: 8.4pt; }
+  .flow { margin-top: 12px; padding-top: 9px; font-size: 12.5pt; }
+  .print-label { display: block; margin: 12px 0 3px; font-size: 8.2pt; font-weight: 700; color: var(--sage); letter-spacing: .02em; }
+  .flow-desc { margin-top: 0; max-width: none; font-size: 9.4pt; line-height: 1.6; }
+  .flow-desc p { margin-bottom: 3px; }
+
+  /* 대제목 */
+  .chapter { margin-top: var(--chapter-gap); }
+  #experience { margin-top: 20px; }
+  .chapter > h2 { margin-bottom: 8px; font-size: 19pt; break-after: avoid; }
+
+  /* 회사 */
+  .job { break-inside: avoid; }
+  #anjihyang, #dohwa { break-inside: auto; }
+  .job-head { padding: 12px 0 9px; break-after: avoid; }
+  .job-head b:first-child { font-size: 11pt; }
+  .job-head > span { font-size: 9.4pt; }
+  .job-head .yr { font-size: 9pt; }
+  .job-head.wide-yr { grid-template-columns: 164px minmax(0, 1fr) auto; }
+  .job .body { padding: 12px 0 20px; }
+  .job:last-child .body { padding-bottom: 0; }
+  .lede { margin: 0 0 6px; break-after: avoid; }
+
+  /* 사례 */
+  .case, .lede + .case, .case + .case { margin-top: 18px; break-inside: avoid; }
+  .case-head { padding-bottom: 10px; break-after: avoid; }
+  .case-head .case-no { margin-bottom: 6px; padding: 2px 10px; font-size: 7.6pt; }
+  .case-head h3, .case h3 { font-size: 15pt; }
+  .case-head h3 span, .case h3 span { margin-top: 6px; font-size: 9.4pt; }
+  .case dl { margin-left: -10px; margin-right: 0; grid-template-columns: 62px 1fr; }
+  .case dt, .case dd { padding-top: 8px; padding-bottom: 8px; }
+  .case dt { padding-left: 10px; padding-right: 8px; padding-top: calc(8px + .05em); font-size: 8.2pt; }
+  .case dt.res { padding-left: 10px; }
+  .case dd, .case dd.res { padding-right: 10px; }
+  .facts li { padding-left: 0; }
+  .facts li::before { left: -10px; }
+  .bars { max-width: 300px; }
+  .bars div { font-size: 8.4pt; line-height: 1.8; }
+  .bars figcaption { font-size: 7.8pt; }
+
+  /* 그 밖에 맡은 일 · 단순 목록 */
+  .more, .job .more { margin-top: 18px; break-inside: avoid; }
+  .more h4 { font-size: 8.2pt; }
+  .more li, ul.plain li { padding: 7px 0; break-inside: avoid; }
+  .lede + ul.plain { margin-top: 10px; }
+  ul.plain { break-inside: avoid; }
+  .links { margin-top: 12px; font-size: 9.4pt; }
+
+  /* 부록 */
+  .sub { margin: 24px 0 8px; font-size: 13pt; break-after: avoid; }
+  #appendix > h2 + .sub { padding-top: 14px; }
+  .row { padding: 9px 0; font-size: 9.4pt; break-inside: avoid; }
+  .row .yr { font-size: 8.6pt; }
+  .skills { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; padding-top: 12px; break-inside: avoid; }
+  .skills h4 { margin-bottom: 4px; font-size: 9.6pt; }
+  .skills p { font-size: 8.5pt; line-height: 1.65; }
+  .skills + .more, .more + .skills { margin-top: 20px; }
+  .case-head { position: static; }
 }
