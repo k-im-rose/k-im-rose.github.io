@@ -505,6 +505,15 @@ a.work-row:hover small { color: #fff; }
 
 /* 커리어 흐름 설명: 한 줄 소개 바로 아래에 붙임 (구분선·[커리어 흐름] 라벨 없음) */
 .cover { padding-bottom: 0; }
-.flow-desc { max-width: var(--measure); margin-top: 28px; }
-.flow-desc p { margin: 0 0 14px; }
+.flow-desc { margin-top: 24px; line-height: 1.6; }
+.flow-desc p { margin: 0 0 10px; }
 .flow-desc p:last-child { margin-bottom: 0; }
+
+/* PC: 커리어 흐름 문단 사이를 더 촘촘하게 (모바일은 그대로) */
+@media (min-width: 721px) {
+  .flow-desc { line-height: 1.45; }
+  .flow-desc p { margin-bottom: 4px; }
+}
+
+/* 커리어 흐름 글과 차례 사이 간격을 절반으로 (160px → 80px, 모바일 88px → 44px) */
+.toc { margin-top: calc(var(--chapter-gap) / 2 + 5px); }
