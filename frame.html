@@ -11,17 +11,12 @@ permalink: /frame/
     <p class="lede">직접 담고 편집한 장면들을 모았습니다.</p>
     {% assign items = site.data.frames.items %}
     {% if items and items.size > 0 %}
-    <div class="frame-grid">
+    <div class="frame-grid" id="frame-grid">
       {% for item in items %}
-      <figure class="frame-item">
-        {% if item.type == 'video' %}
-        <button type="button" class="frame-play" data-src="{{ item.src | relative_url }}" data-poster="{{ item.poster | relative_url }}" aria-label="{{ item.alt }} 재생">
-          <img src="{{ item.poster | relative_url }}" alt="{{ item.alt }}" loading="lazy">
+      <figure class="frame-item" data-ratio="{{ item.ratio }}" data-src="{{ site.data.frames.base }}/videos/{{ item.id }}.mp4">
+        <button type="button" class="frame-play" aria-label="영상 재생">
+          <img src="{{ site.data.frames.base }}/thumbs/{{ item.id }}.jpg" alt="" loading="lazy" decoding="async">
         </button>
-        {% else %}
-        <img src="{{ item.src | relative_url }}" alt="{{ item.alt }}" loading="lazy">
-        {% endif %}
-        {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
       </figure>
       {% endfor %}
     </div>
@@ -35,3 +30,65 @@ permalink: /frame/
     <a href="#top">맨 위로 ↑</a>
   </footer>
 </main>
+
+<style>
+/* 줄맞춤 갤러리: 원본 비율 유지, 줄 양끝 정렬, 자동 배치 (스크립트가 계산) */
+.frame-grid { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+.frame-item { margin: 0; position: relative; overflow: hidden; background: var(--hair); }
+.frame-play { all: unset; cursor: pointer; display: block; width: 100%; height: 100%; }
+.frame-play img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.frame-item video { display: block; width: 100%; height: 100%; object-fit: cover; background: #000; }
+@media (max-width: 720px) { .frame-grid { gap: 10px; } }
+</style>
+
+<script>
+(function () {
+  var grid = document.getElementById('frame-grid');
+  if (!grid) return;
+  var TARGET = function () { return window.innerWidth <= 720 ? 150 : 260; };
+  var GAP = function () { return window.innerWidth <= 720 ? 10 : 16; };
+
+  function layout() {
+    var W = grid.clientWidth, gap = GAP(), H0 = TARGET();
+    var items = Array.prototype.slice.call(grid.children);
+    var row = [];
+    function sizeRow(h) {
+      row.forEach(function (it) {
+        it.style.width = (it.r * h) + 'px';
+        it.style.height = h + 'px';
+      });
+    }
+    items.forEach(function (f) {
+      f.r = parseFloat(f.getAttribute('data-ratio')) || 0.5625;
+      row.push(f);
+      var sum = row.reduce(function (s, x) { return s + x.r; }, 0);
+      if (sum * H0 + gap * (row.length - 1) >= W) {
+        sizeRow((W - gap * (row.length - 1)) / sum);
+        row = [];
+      }
+    });
+    // 마지막 줄은 목표 높이로 (양끝 정렬 없이 왼쪽부터)
+    if (row.length) sizeRow(H0);
+  }
+
+  grid.addEventListener('click', function (e) {
+    var btn = e.target.closest('.frame-play');
+    if (!btn) return;
+    var fig = btn.parentElement;
+    var v = document.createElement('video');
+    v.controls = true;
+    v.playsInline = true;
+    v.preload = 'none';           // 자동 로딩/재생 없음
+    v.src = fig.getAttribute('data-src');
+    v.poster = btn.querySelector('img').src;
+    fig.innerHTML = '';
+    fig.appendChild(v);
+    v.play().catch(function () {});
+  });
+
+  layout();
+  window.addEventListener('resize', layout);
+  var imgs = grid.querySelectorAll('img');
+  Array.prototype.forEach.call(imgs, function (im) { if (!im.complete) im.addEventListener('load', layout); });
+})();
+</script>

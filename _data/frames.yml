@@ -1,1 +1,22 @@
-items: []
+# 프레임 갤러리 항목. 영상은 R2(Worker)에서 재생, 썸네일도 같은 곳에서 불러옴.
+# ratio = 가로 / 세로 (세로 영상 9:16 = 0.5625)
+base: https://portfolio-media.k-im-rose-media-worker.workers.dev
+items:
+  - id: 403AFADF
+    type: video
+    ratio: 0.5625
+  - id: 88D49CAE
+    type: video
+    ratio: 0.5625
+  - id: A8AFFEBF
+    type: video
+    ratio: 0.5625
+  - id: E4AB0080
+    type: video
+    ratio: 0.5625
+  - id: E52B94AB
+    type: video
+    ratio: 0.5625
+  - id: 451427CB
+    type: video
+    ratio: 0.5625
