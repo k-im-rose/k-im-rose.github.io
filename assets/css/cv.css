@@ -449,6 +449,8 @@ a.work-row:hover small { color: #fff; }
 .thought.work { max-width: none; }
 .thought .subtitle { margin: 10px 0 0; font-size: 20px; color: var(--soft); line-height: 1.5; }
 .work .thought-body h2 { margin: 2.4em 0 .8em; padding-top: 22px; border-top: 2px solid var(--ink); font-size: 28px; font-weight: 700; }
+/* 본문 맨 위 첫 제목은 위 날짜 선과 겹치지 않도록 구분선 제거 */
+.work .thought-body > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 .work .thought-body h3 { margin: 1.8em 0 .6em; font-size: 21px; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); }
 .work .thought-body h4 { margin: 1.6em 0 .5em; font-size: 18px; font-weight: 700; color: var(--ink); }
 .work .thought-body ul, .work .thought-body ol { margin: 0 0 1.1em; padding-left: 1.3em; }
