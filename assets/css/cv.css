@@ -498,3 +498,7 @@ a.work-row:hover small { color: #fff; }
 
 /* 안지향 '그 밖에 맡은 일' 구분선을 옅게 */
 #anjihyang .more li { border-bottom-color: #ebe9e1; }
+
+/* 로고: 현재 비율 그대로 확대해 오른쪽 카테고리 띠와 높이를 맞춤 (띠 높이 36.2px / 모바일 32.9px) */
+.logo { font-size: 25.46px; }
+@media (max-width: 720px) { .logo { font-size: 23.14px; } }
