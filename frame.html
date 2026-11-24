@@ -1,0 +1,37 @@
+---
+layout: cv
+title: 프레임 — 김민지
+permalink: /frame/
+---
+{% include cv-head.html active='frame' %}
+<main class="sheet">
+
+  <section class="chapter" id="frames">
+    <h2>프레임</h2>
+    <p class="lede">직접 담고 편집한 장면들을 모았습니다.</p>
+    {% assign items = site.data.frames.items %}
+    {% if items and items.size > 0 %}
+    <div class="frame-grid">
+      {% for item in items %}
+      <figure class="frame-item">
+        {% if item.type == 'video' %}
+        <button type="button" class="frame-play" data-src="{{ item.src | relative_url }}" data-poster="{{ item.poster | relative_url }}" aria-label="{{ item.alt }} 재생">
+          <img src="{{ item.poster | relative_url }}" alt="{{ item.alt }}" loading="lazy">
+        </button>
+        {% else %}
+        <img src="{{ item.src | relative_url }}" alt="{{ item.alt }}" loading="lazy">
+        {% endif %}
+        {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="lede">준비 중입니다.</p>
+    {% endif %}
+  </section>
+
+  <footer class="foot">
+    <span>프레임</span>
+    <a href="#top">맨 위로 ↑</a>
+  </footer>
+</main>
