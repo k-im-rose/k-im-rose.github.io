@@ -517,3 +517,25 @@ a.work-row:hover small { color: #fff; }
 
 /* 커리어 흐름 글과 차례 사이 간격을 절반으로 (160px → 80px, 모바일 88px → 44px) */
 .toc { margin-top: calc(var(--chapter-gap) / 2 + 5px); }
+
+/* 사례 제목 글자 +8px (PC 22→30px, 모바일 20→28px), 부제목과의 간격 4→14px */
+.case-head h3 { font-size: 30px; }
+.case-head h3 span { margin-top: 14px; }
+@media (max-width: 720px) { .case-head h3 { font-size: 28px; } }
+
+/* 사례 위 여백 1/3 축소 (PC 64→37px, 모바일 48→32px) */
+.case { margin-top: 37px; }
+@media (max-width: 720px) { .case { margin-top: 32px; } }
+
+/* 눈에 보이는 간격을 모두 같게 (PC 55px / 모바일 50px):
+   소개 문단 → 첫 사례 · 사례 → 다음 사례 · 사례 → '그 밖에 맡은 일' · 소개 문단 → 목록(씨씨씨컴퍼니) */
+.case { margin-top: 49px; }
+.lede + .case { margin-top: 37px; }
+.more { margin-top: 55px; }
+.lede + ul.plain { margin-top: 43px; }
+@media (max-width: 720px) {
+  .case { margin-top: 47px; }
+  .lede + .case { margin-top: 47px; }
+  .more { margin-top: 50px; }
+  .lede + ul.plain { margin-top: 50px; }
+}
