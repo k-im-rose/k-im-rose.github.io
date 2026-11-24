@@ -65,7 +65,7 @@ b { font-weight: 700; color: var(--ink); }
 .flow .flow-tag {
   display: inline-block; margin: 0 .3em 0 0; padding: 0 .5em; vertical-align: .08em;
   background: var(--sage-light); color: var(--paper); border-radius: 999px;
-  font-size: 1.15em; font-weight: 700; line-height: 1.5; letter-spacing: 0;
+  font-size: .8em; font-weight: 700; line-height: 1.875em; letter-spacing: 0;   /* 1.875em × .8 = 1.5 : 알약 높이는 오른쪽 흐름 글자 줄 높이와 같음 */
 }
 .hook { margin-top: 40px; }
 .hook-line { margin: 0 0 14px; font-size: clamp(28px, 3.1vw, 40px); font-weight: 700; line-height: 1.4; letter-spacing: -0.04em; color: var(--ink); }
