@@ -33,7 +33,8 @@ permalink: /frame/
 
 <style>
 /* 줄맞춤 갤러리: 원본 비율 유지, 줄 양끝 정렬, 자동 배치 (스크립트가 계산) */
-.frame-grid { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+#frames .lede { margin-bottom: 28px; }
+.frame-grid { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; border-top: 1px solid var(--rule); padding-top: 18px; }
 .frame-item { margin: 0; position: relative; overflow: hidden; background: var(--hair); }
 .frame-play { all: unset; cursor: pointer; display: block; width: 100%; height: 100%; }
 .frame-play img { display: block; width: 100%; height: 100%; object-fit: contain; }
