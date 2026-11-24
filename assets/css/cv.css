@@ -542,3 +542,19 @@ a.work-row:hover small { color: #fff; }
 
 /* 차례와 '경력' 사이: 다른 대제목과 같은 간격 (첫 장 위로 올리는 규칙이 이력서 홈의 경력에 잘못 걸리던 것 수정) */
 #experience { margin-top: var(--chapter-gap); }
+
+/* 모두의연구소: 기간을 한 줄·오른쪽 정렬로 (기간 칸을 내용 길이에 맞춤) */
+.job-head.wide-yr { grid-template-columns: 240px minmax(0, 1fr) auto; }
+@media (max-width: 720px) {
+  .job-head.wide-yr { grid-template-columns: 1fr; }
+  .job-head.wide-yr > span { display: none; }
+  .job-head.wide-yr .yr { grid-row: 2; grid-column: 1; text-align: right; margin-top: 6px; }
+}
+
+/* 사례 02·03, '그 밖에 맡은 일' 위 간격을 1/3 더 넓힘 (PC 55→73px, 모바일 50→67px) */
+.case + .case { margin-top: 67px; }
+.job .more { margin-top: 73px; }
+@media (max-width: 720px) {
+  .case + .case { margin-top: 64px; }
+  .job .more { margin-top: 67px; }
+}
