@@ -502,3 +502,9 @@ a.work-row:hover small { color: #fff; }
 /* 로고: 현재 비율 그대로 확대해 오른쪽 카테고리 띠와 높이를 맞춤 (띠 높이 36.2px / 모바일 32.9px) */
 .logo { font-size: 25.46px; }
 @media (max-width: 720px) { .logo { font-size: 23.14px; } }
+
+/* 커리어 흐름 설명: 한 줄 소개 바로 아래에 붙임 (구분선·[커리어 흐름] 라벨 없음) */
+.cover { padding-bottom: 0; }
+.flow-desc { max-width: var(--measure); margin-top: 28px; }
+.flow-desc p { margin: 0 0 14px; }
+.flow-desc p:last-child { margin-bottom: 0; }
