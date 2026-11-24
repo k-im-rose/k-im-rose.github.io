@@ -42,13 +42,16 @@ permalink: /album/
 /* 전체 화면일 때도 세로 원본 비율을 유지하고 잘리지 않게 */
 .frame-item video:fullscreen, .frame-item video:-webkit-full-screen { width: 100%; height: 100%; object-fit: contain; background: #000; }
 @media (max-width: 720px) { .frame-grid { gap: 10px; } }
+/* 모바일 전체 화면 보기: 검은 배경에 영상 한 편만 */
+.frame-lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 56px 12px 12px; background: rgba(20, 21, 18, .95); }
+.frame-lightbox video { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; background: #000; }
+.frame-close { position: absolute; top: 10px; right: 12px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px; background: var(--paper); color: var(--ink); font-size: 26px; line-height: 1; cursor: pointer; }
 </style>
 
 <script>
 (function () {
   var grid = document.getElementById('frame-grid');
   if (!grid) return;
-  var TARGET = function () { return 150; }; // 모바일 마지막 줄 높이
   var GAP = function () { return window.innerWidth <= 720 ? 10 : 16; };
 
   function layout() {
@@ -63,14 +66,8 @@ permalink: /album/
       // PC: 한 줄에 3개씩. 각 줄의 높이를 맞추고, 원본 비율대로 너비를 나눔
       for (var i = 0; i < items.length; i += 3) rows.push(items.slice(i, i + 3));
     } else {
-      // 모바일: 목표 높이 기준으로 자동 줄바꿈
-      var H0 = TARGET(), cur = [];
-      items.forEach(function (f) {
-        cur.push(f);
-        var sum = cur.reduce(function (s, x) { return s + x.r; }, 0);
-        if (sum * H0 + gap * (cur.length - 1) >= W) { rows.push(cur); cur = []; }
-      });
-      if (cur.length) rows.push(cur);
+      // 모바일: 한 줄에 2개씩. 두 영상의 높이를 맞춰 너비를 가득 채움
+      for (var j = 0; j < items.length; j += 2) rows.push(items.slice(j, j + 2));
     }
     // PC: 마지막 줄이 3개 미만이면 위 줄과 같은 높이를 유지 (줄이 크게 늘어나지 않게)
     var refH = null;
@@ -84,7 +81,8 @@ permalink: /album/
       if (wide) {
         h = (row.length === 3 || !refH) ? (W - gap * (row.length - 1) - 2) / sum : refH;
       } else {
-        h = (idx < rows.length - 1) ? (W - gap * (row.length - 1) - 2) / sum : TARGET();
+        // 마지막 줄에 1개만 남으면 칸 너비(절반)에 원본 비율로 맞춤
+        h = row.length === 2 ? (W - gap - 2) / sum : ((W - gap) / 2) / row[0].r;
       }
       row.forEach(function (it) {
         it.style.width = (it.r * h) + 'px';
@@ -93,10 +91,45 @@ permalink: /album/
     });
   }
 
+  function openLightbox(src, poster) {
+    var box = document.createElement('div');
+    box.className = 'frame-lightbox';
+    var closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'frame-close';
+    closeBtn.setAttribute('aria-label', '닫기');
+    closeBtn.textContent = '×';
+    var v = document.createElement('video');
+    v.controls = true;
+    v.playsInline = true;
+    v.preload = 'auto';
+    v.src = src;
+    v.poster = poster;
+    box.appendChild(closeBtn);
+    box.appendChild(v);
+    function close() {
+      v.pause();
+      document.removeEventListener('keydown', onKey);
+      box.remove();
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target === closeBtn) close();
+    });
+    document.addEventListener('keydown', onKey);
+    document.body.appendChild(box);
+    v.play().catch(function () {});
+  }
+
   grid.addEventListener('click', function (e) {
     var btn = e.target.closest('.frame-play');
     if (!btn) return;
     var fig = btn.parentElement;
+    if (window.innerWidth <= 720) {
+      // 모바일: 누르면 화면 전체에 한 편만 크게 연다
+      openLightbox(fig.getAttribute('data-src'), btn.querySelector('img').src);
+      return;
+    }
     var v = document.createElement('video');
     v.controls = true;
     v.playsInline = true;
