@@ -61,6 +61,12 @@ b { font-weight: 700; color: var(--ink); }
   font-size: clamp(21px, 2.2vw, 28px); font-weight: 600; line-height: 1.5; letter-spacing: -0.03em; color: var(--ink);
 }
 .flow span { color: var(--sage); font-weight: 400; margin: 0 .2em; }
+/* '약 8년'은 사례 01과 같은 밝은 세이지 알약. 글자는 흐름 줄보다 크게, 알약 높이는 줄 높이에 맞춤 */
+.flow .flow-tag {
+  display: inline-block; margin: 0 .3em 0 0; padding: 0 .5em; vertical-align: .08em;
+  background: var(--sage-light); color: var(--paper); border-radius: 999px;
+  font-size: 1.15em; font-weight: 700; line-height: 1.5; letter-spacing: 0;
+}
 .hook { margin-top: 40px; }
 .hook-line { margin: 0 0 14px; font-size: clamp(28px, 3.1vw, 40px); font-weight: 700; line-height: 1.4; letter-spacing: -0.04em; color: var(--ink); }
 .hook-pick { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 15px; color: var(--sage); }

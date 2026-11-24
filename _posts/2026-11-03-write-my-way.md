@@ -9,8 +9,6 @@ summary: "반복해서 설명하던 나의 글쓰기 기준을 AI 스킬로 만�
 
 <p class="game-links"><a href="https://github.com/k-im-rose/aiffel/tree/main/my-skills" target="_blank" rel="noopener">GitHub와 README 보기</a> · <a href="https://github.com/k-im-rose/aiffel/blob/main/my-skills/.claude/skills/write-my-way/SKILL.md" target="_blank" rel="noopener">스킬 파일 보기</a></p>
 
-**반복해서 설명하던 나의 글쓰기 기준을 AI 스킬로 만들다**
-
 ## 1. 어떤 문제에서 시작했나?
 
 나는 평소 AI와 함께 글을 쓰는 일이 많다. 생각나는 대로 메모를 전달하고 글로 정리해 달라고 하거나, 이미 작성한 글을 더 자연스럽게 다듬어 달라고 요청한다.

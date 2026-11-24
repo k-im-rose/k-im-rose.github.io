@@ -7,9 +7,10 @@ tech: "Claude Code · Jekyll · HTML · CSS · JavaScript · GitHub Pages"
 summary: "정해진 양식 대신, 나의 경험과 작업을 자유롭게 보여주는 웹사이트"
 ---
 
+<div class="game-embed">
+  <iframe src="https://k-im-rose.github.io/" title="나만의 웹 포트폴리오 메인 페이지" loading="lazy"></iframe>
+</div>
 <p class="game-links"><a href="https://k-im-rose.github.io/" target="_blank" rel="noopener">웹사이트 보기</a> · <a href="https://github.com/k-im-rose/k-im-rose.github.io" target="_blank" rel="noopener">GitHub 보기</a></p>
-
-**정해진 양식 대신, 나의 경험과 작업을 자유롭게 보여주는 웹사이트**
 
 ## 1. 어떤 문제에서 시작했나?
 
