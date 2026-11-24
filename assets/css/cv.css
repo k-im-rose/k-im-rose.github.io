@@ -63,7 +63,7 @@ b { font-weight: 700; color: var(--ink); }
 .flow span { color: var(--sage); font-weight: 400; margin: 0 .2em; }
 /* '약 8년'은 사례 01과 같은 밝은 세이지 알약. 글자는 흐름 줄보다 크게, 알약 높이는 줄 높이에 맞춤 */
 .flow .flow-tag {
-  display: inline-block; margin: 0 .3em 0 0; padding: 0 .5em; vertical-align: .08em;
+  display: inline-block; margin: 0 .9em 0 0; padding: 0 .5em; vertical-align: middle;
   background: var(--sage-light); color: var(--paper); border-radius: 999px;
   font-size: .8em; font-weight: 700; line-height: 1.875em; letter-spacing: 0;   /* 1.875em × .8 = 1.5 : 알약 높이는 오른쪽 흐름 글자 줄 높이와 같음 */
 }
