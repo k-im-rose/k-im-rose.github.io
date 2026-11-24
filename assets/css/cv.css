@@ -428,7 +428,7 @@ a.work-row:hover small { color: #fff; }
 /* ═════ AI 작업 상세 글 ═════ */
 .thought.work { max-width: none; }
 .thought .subtitle { margin: 10px 0 0; font-size: 20px; color: var(--soft); line-height: 1.5; }
-.work .thought-body h2 { margin: 2.4em 0 .8em; padding-top: 22px; border-top: 2px solid var(--ink); font-size: 28px; font-weight: 700; }
+.work .thought-body h2 { margin: 2.4em 0 .8em; font-size: 28px; font-weight: 700; }
 /* 본문 맨 위 첫 제목은 위 날짜 선과 겹치지 않도록 구분선 제거 */
 .work .thought-body > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 /* 글 중간 제목 중 구분선을 끄고 싶은 제목에만 {: .no-rule} 지정 */
