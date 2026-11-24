@@ -7,6 +7,7 @@ permalink: /thoughts/
 <main class="sheet">
   <section class="chapter thoughts-list" id="works">
     <h2>짧은 생각</h2>
+    <p class="lede">일상에서 느낀 가벼운 생각을 남깁니다.</p>
     {% assign items = site.thoughts | sort: 'date' | reverse %}
     {% for t in items %}
     <a class="row work-row" href="{{ t.url | relative_url }}"><b>{{ t.title }}</b><b class="yr">{{ t.date | date: "%Y.%m.%d" }}</b></a>
