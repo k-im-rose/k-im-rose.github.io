@@ -45,30 +45,49 @@ permalink: /frame/
 (function () {
   var grid = document.getElementById('frame-grid');
   if (!grid) return;
-  var TARGET = function () { return window.innerWidth <= 720 ? 150 : 260; };
+  var TARGET = function () { return 150; }; // 모바일 마지막 줄 높이
   var GAP = function () { return window.innerWidth <= 720 ? 10 : 16; };
 
   function layout() {
-    var W = grid.clientWidth, gap = GAP(), H0 = TARGET();
+    var W = grid.clientWidth, gap = GAP();
     var items = Array.prototype.slice.call(grid.children);
-    var row = [];
-    function sizeRow(h) {
+    items.forEach(function (f) {
+      f.r = parseFloat(f.getAttribute('data-ratio')) || 0.5625;
+    });
+    var wide = window.innerWidth > 720;
+    var rows = [];
+    if (wide) {
+      // PC: 한 줄에 3개씩. 각 줄의 높이를 맞추고, 원본 비율대로 너비를 나눔
+      for (var i = 0; i < items.length; i += 3) rows.push(items.slice(i, i + 3));
+    } else {
+      // 모바일: 목표 높이 기준으로 자동 줄바꿈
+      var H0 = TARGET(), cur = [];
+      items.forEach(function (f) {
+        cur.push(f);
+        var sum = cur.reduce(function (s, x) { return s + x.r; }, 0);
+        if (sum * H0 + gap * (cur.length - 1) >= W) { rows.push(cur); cur = []; }
+      });
+      if (cur.length) rows.push(cur);
+    }
+    // PC: 마지막 줄이 3개 미만이면 위 줄과 같은 높이를 유지 (줄이 크게 늘어나지 않게)
+    var refH = null;
+    if (wide && rows.length && rows[0].length === 3) {
+      var s0 = rows[0].reduce(function (s, x) { return s + x.r; }, 0);
+      refH = (W - gap * 2 - 2) / s0; // 소수점 반올림으로 줄이 넘치지 않게 2px 여유
+    }
+    rows.forEach(function (row, idx) {
+      var sum = row.reduce(function (s, x) { return s + x.r; }, 0);
+      var h;
+      if (wide) {
+        h = (row.length === 3 || !refH) ? (W - gap * (row.length - 1) - 2) / sum : refH;
+      } else {
+        h = (idx < rows.length - 1) ? (W - gap * (row.length - 1) - 2) / sum : TARGET();
+      }
       row.forEach(function (it) {
         it.style.width = (it.r * h) + 'px';
         it.style.height = h + 'px';
       });
-    }
-    items.forEach(function (f) {
-      f.r = parseFloat(f.getAttribute('data-ratio')) || 0.5625;
-      row.push(f);
-      var sum = row.reduce(function (s, x) { return s + x.r; }, 0);
-      if (sum * H0 + gap * (row.length - 1) >= W) {
-        sizeRow((W - gap * (row.length - 1)) / sum);
-        row = [];
-      }
     });
-    // 마지막 줄은 목표 높이로 (양끝 정렬 없이 왼쪽부터)
-    if (row.length) sizeRow(H0);
   }
 
   grid.addEventListener('click', function (e) {
