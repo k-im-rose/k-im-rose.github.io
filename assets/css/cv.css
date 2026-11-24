@@ -539,3 +539,6 @@ a.work-row:hover small { color: #fff; }
   .more { margin-top: 50px; }
   .lede + ul.plain { margin-top: 50px; }
 }
+
+/* 차례와 '경력' 사이: 다른 대제목과 같은 간격 (첫 장 위로 올리는 규칙이 이력서 홈의 경력에 잘못 걸리던 것 수정) */
+#experience { margin-top: var(--chapter-gap); }
