@@ -5,7 +5,7 @@ permalink: /thoughts/
 ---
 {% include cv-head.html active='thoughts' %}
 <main class="sheet">
-  <section class="chapter" id="works">
+  <section class="chapter thoughts-list" id="works">
     <h2>짧은 생각</h2>
     {% assign items = site.thoughts | sort: 'date' | reverse %}
     {% for t in items %}

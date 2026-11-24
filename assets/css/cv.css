@@ -471,3 +471,7 @@ a.work-row:hover small { color: #fff; }
 
 /* 첫 장(AI 작업실 · 짧은 생각): 헤더 바로 아래로 올림 */
 .sheet > .chapter:first-of-type { margin-top: 14px; }
+
+/* 짧은 생각 목록: 제목은 한 줄로 나열 (이 목록에만 적용) */
+.thoughts-list .row { grid-template-columns: minmax(0, 1fr) auto; }
+.thoughts-list .row b:first-child { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
