@@ -12,7 +12,7 @@ permalink: /ai-lab/
     {% assign items = site.posts | where: "section", "ai-lab" %}
     {% for post in items %}
     {% assign parts = post.title | split: ' — ' %}
-    <a class="row work-row" href="{{ post.url | relative_url }}"><b>{{ parts[0] }}</b><span>// {{ post.tech }}<small>{{ post.summary }}</small></span><b class="yr">{{ post.date | date: "%Y.%m.%d" }}</b></a>
+    <a class="row work-row" href="{{ post.url | relative_url }}"><b>{{ parts[0] }}<span class="kind">{% if post.team %}팀 프로젝트{% else %}개인 프로젝트{% endif %}</span></b><span>// {{ post.tech }}<small>{{ post.summary }}</small></span><b class="yr">{{ post.date | date: "%Y.%m.%d" }}</b></a>
     {% endfor %}
   </section>
 

@@ -3,6 +3,7 @@ layout: work
 title: "잠깐만 휴식 — 3일간의 해커톤, 사람과 AI가 함께 일하는 방식을 설계하다"
 date: 2026-11-26 00:00:00 +0900
 section: ai-lab
+team: true
 tech: "React · Vite · CSS · GitHub · Claude Code · ChatGPT · Vercel"
 summary: "업무 중 짧은 스트레칭과 호흡을 실천하도록 돕는 직장인 웹 서비스. 4인 해커톤 팀장 · 디자이너"
 ---
