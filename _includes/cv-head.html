@@ -1,9 +1,31 @@
 <header class="site-head">
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-cats" aria-label="카테고리 열기"><span></span><span></span><span></span></button>
   <a class="logo" href="{{ '/' | relative_url }}" aria-label="김민지 홈">김민지</a>
-  <nav class="cats" aria-label="카테고리">
+  <div class="drawer-scrim" aria-hidden="true"></div>
+  <nav class="cats" id="site-cats" aria-label="카테고리">
     <a{% if include.active == 'cv' %} class="on" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">경력 소개</a>
     <a{% if include.active == 'ai' %} class="on" aria-current="page"{% endif %} href="{{ '/ai-lab/' | relative_url }}">AI 작업실</a>
     <a{% if include.active == 'thoughts' %} class="on" aria-current="page"{% endif %} href="{{ '/thoughts/' | relative_url }}">짧은 생각</a>
     <a{% if include.active == 'frame' %} class="on" aria-current="page"{% endif %} href="{{ '/album/' | relative_url }}">영상집</a>
   </nav>
 </header>
+<script>
+(function () {
+  var head = document.querySelector('.site-head');
+  if (!head) return;
+  var btn = head.querySelector('.menu-btn');
+  var scrim = head.querySelector('.drawer-scrim');
+  function setOpen(open) {
+    head.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? '카테고리 닫기' : '카테고리 열기');
+  }
+  btn.addEventListener('click', function () {
+    setOpen(!head.classList.contains('is-open'));
+  });
+  scrim.addEventListener('click', function () { setOpen(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+})();
+</script>
