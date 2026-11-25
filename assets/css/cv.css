@@ -427,7 +427,7 @@ html { scroll-padding-top: 84px; }
 .row .yr a:hover { border-bottom-color: var(--ink); }
 .work-row small { display: block; margin-top: 4px; font-size: 16px; color: var(--soft); }
 a.work-row:hover small { color: #fff; }
-.work-row .kind { display: block; width: 78px; margin-top: 6px; font-size: 13px; font-weight: 600; line-height: 1.25; text-align: center; background: var(--sage-light); color: var(--paper); border-radius: 2px; }
+.work-row .kind { display: block; width: max-content; padding: 0 4px; margin-top: 6px; font-size: 13px; font-weight: 600; line-height: 1.25; text-align: center; background: var(--sage-light); color: var(--paper); border-radius: 2px; }
 #help .row > span, #works .row > span { line-height: 1.6; }
 @media (max-width: 720px) { .row { grid-template-columns: 1fr; row-gap: 4px; } .row .yr { text-align: left; } }
 
