@@ -44,7 +44,7 @@ b { font-weight: 700; color: var(--ink); }
 .kicker { margin: 0; font-size: 20px; font-weight: 500; color: var(--ink); letter-spacing: -0.01em; }
 .contact { text-align: right; font-size: 17px; line-height: 1.6; }
 .contact p { margin: 0; }
-.contact-line { white-space: nowrap; font-size: 13px; }
+.contact-line { white-space: nowrap; font-size: 15.6px; }   /* PC: 13px → 15.6px (20%). 모바일은 아래 720px 블록에서 따로 지정 */
 .contact-line span { margin: 0 6px; opacity: .5; }
 .contact a { text-decoration: none; }
 .contact a:hover { text-decoration: underline; }
