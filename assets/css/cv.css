@@ -380,9 +380,11 @@ html { scroll-padding-top: 84px; }
 .case dt, .case dt.res { padding-left: 16px; padding-right: 20px; }
 .case dd, .case dd.res { padding-right: 16px; }
 @media (max-width: 720px) {
-  .case dl { margin-left: -16px; margin-right: -16px; }
-  .case dt, .case dt.res { padding-left: 16px; padding-right: 16px; }
-  .case dd, .case dd.res { padding-left: 16px; padding-right: 16px; }
+  /* 모바일: 선과 결과 상자 모두 본문 양쪽 끝에 맞춤. 결과 상자 안쪽 내용만 여백을 줌 */
+  .case dl { margin-left: 0; margin-right: 0; }
+  .case dt, .case dt.res { padding-left: 0; padding-right: 0; }
+  .case dd, .case dd.res { padding-left: 0; padding-right: 0; }
+  .case dt.res, .case dd.res { padding-left: 20px; padding-right: 20px; }
 }
 
 /* 결과 목록의 '–'를 왼쪽 여백으로 내어 걸기 → 글자는 다른 본문과 같은 선(468px)에서 시작 */
