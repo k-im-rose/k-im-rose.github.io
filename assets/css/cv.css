@@ -684,3 +684,11 @@ a.work-row:hover small { color: #fff; }
 }
 .thought .back a svg { display: block; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .thought .back a:hover { background: var(--sage); }
+
+/* ═════ 모바일 표지: 연락처 글자 10% 키움, 약 8년 태그를 첫 줄로, 흐름 줄 간격, 차례 위 여백 통일 ═════ */
+@media (max-width: 720px) {
+  .contact-line { font-size: 13.2px; }                         /* 12px → 13.2px (10%) */
+  .flow { line-height: 1.8; }                                   /* 흐름 글 행간을 넓힘 */
+  .flow .flow-tag { display: block; width: max-content; margin: 0 0 12px; vertical-align: baseline; }  /* '약 8년'만 윗줄, 나머지는 다음 줄 */
+  .toc { margin-top: var(--chapter-gap); }                      /* 차례 위 여백을 다른 대제목(경력·지금 하는 일·부록)과 같게 */
+}
