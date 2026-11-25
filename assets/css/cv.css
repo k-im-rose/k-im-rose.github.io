@@ -555,7 +555,7 @@ a.work-row:hover small { color: #fff; }
   /* 모바일에서는 큰 이름을 화면에서만 숨김 (상단 로고와 중복). 스크린리더용 h1은 남겨 둔다 */
   .name { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
   .name-side { display: contents; }
-  .name-side .contact { order: 0; text-align: left; margin: 12px 0 0; }
+  .name-side .contact { order: 0; text-align: left; margin: 4px 0 0; }
   .name-side .cover-pdf { display: none; }   /* 모바일에서는 PDF 내려받기 버튼을 숨김 */
 }
 
@@ -691,4 +691,11 @@ a.work-row:hover small { color: #fff; }
   .flow { line-height: 1.8; }                                   /* 흐름 글 행간을 넓힘 */
   .flow .flow-tag { display: block; width: max-content; margin: 0 0 12px; vertical-align: baseline; }  /* '약 8년'만 윗줄, 나머지는 다음 줄 */
   .toc { margin-top: var(--chapter-gap); }                      /* 차례 위 여백을 다른 대제목(경력·지금 하는 일·부록)과 같게 */
+}
+
+/* ═════ 표지 연락처 아래 거주·근무 위치 한 줄 ═════ */
+.contact .contact-loc { margin: 10px 0 0; font-size: 13px; line-height: 1.4; color: var(--soft); white-space: nowrap; }   /* PC: 글자 위 간격을 넓힘 */
+@media (max-width: 720px) {
+  .contact .contact-loc { margin-top: 12px; line-height: 1.2; }   /* .contact p의 margin:0을 이기도록 선택자를 길게 씀 */
+  .flow { margin-top: 14px; }  /* 위치 줄과 아래 선 사이 간격을 넓힘 */
 }
