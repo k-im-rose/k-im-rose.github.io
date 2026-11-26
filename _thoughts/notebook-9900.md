@@ -23,6 +23,15 @@ summary: 빈 페이지의 부담을 내려놓고 다시 쓰기 시작한 이유
 
 처음 사 온 날부터 지금까지 정말 잘 쓰고 있다.
 
+<div class="pair">
+  <figure>
+    <img src="/assets/images/thoughts/notebook-9900/notebook-a.jpg" alt="9,900원짜리 공책 사진 1" loading="lazy">
+  </figure>
+  <figure>
+    <img src="/assets/images/thoughts/notebook-9900/notebook-b.jpg" alt="9,900원짜리 공책 사진 2" loading="lazy">
+  </figure>
+</div>
+
 가끔 바빠서 며칠씩 건너뛰기도 한다. 하지만 공책에는 미리 적힌 날짜가 없으니 빈 페이지를 보며 부담을 느낄 필요도 없다. 언제든 다시 펼쳐 쓰면 그만이다.
 
 생각해 보면 이전에는 다이어리 하나를 쓰려고 예쁜 펜과 스티커까지 샀다. 글씨도 예쁘게 쓰고 싶었다. 그러다 보니 기록하는 일보다 잘 꾸미고 채우는 일이 더 중요해졌던 것 같다.

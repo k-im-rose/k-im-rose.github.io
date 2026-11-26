@@ -700,3 +700,8 @@ a.work-row:hover small { color: #fff; }
   .contact .contact-loc { margin-top: 12px; line-height: 1.2; }   /* .contact p의 margin:0을 이기도록 선택자를 길게 씀 */
   .flow { margin-top: 14px; }  /* 위치 줄과 아래 선 사이 간격을 넓힘 */
 }
+
+/* 나란히 놓는 사진 두 장 (모바일에서는 한 장씩 쌓임) */
+.thought-body .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 2em 0; }
+.thought-body .pair figure { margin: 0; }
+@media (max-width: 600px) { .thought-body .pair { grid-template-columns: 1fr; } }
