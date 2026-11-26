@@ -705,3 +705,6 @@ a.work-row:hover small { color: #fff; }
 .thought-body .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 2em 0; }
 .thought-body .pair figure { margin: 0; }
 @media (max-width: 600px) { .thought-body .pair { grid-template-columns: 1fr; } }
+
+/* 사진 아래 작은 주석 글씨 */
+.thought-body .caption { margin: -1em 0 2em; font-size: 14px; line-height: 1.6; color: var(--soft); }

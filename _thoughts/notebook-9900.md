@@ -31,6 +31,7 @@ summary: 빈 페이지의 부담을 내려놓고 다시 쓰기 시작한 이유
     <img src="/assets/images/thoughts/notebook-9900/notebook-b.jpg" alt="9,900원짜리 공책 사진 2" loading="lazy">
   </figure>
 </div>
+<p class="caption">공개 가능한 페이지로 신중하게 골랐다. 실제로는 매우 빽빽하고 거칠게 쓰여 있다.</p>
 
 가끔 바빠서 며칠씩 건너뛰기도 한다. 하지만 공책에는 미리 적힌 날짜가 없으니 빈 페이지를 보며 부담을 느낄 필요도 없다. 언제든 다시 펼쳐 쓰면 그만이다.
 
