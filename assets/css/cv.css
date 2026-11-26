@@ -120,6 +120,8 @@ a.row:hover, a.row:hover b, a.row:hover span { color: #fff; }
 .case dt, .case dd { padding: 14px 0; border-bottom: 1px solid var(--hair); }
 .case dt { font-size: var(--fs-meta); font-weight: 700; color: var(--sage); line-height: var(--lh-body); padding-top: calc(14px + 0.08em); }
 .case dd { margin: 0; }
+/* 본문 양쪽 맞춤: AI 작업실·짧은 생각과 같은 서식 (글자 단위 줄바꿈) */
+.intro-body p, p.lede, .case dd:not(.res) { text-align: justify; word-break: break-all; }
 .facts { list-style: none; margin: 0; padding: 0; }
 .facts li { padding: 2px 0 6px 16px; position: relative; }
 .facts li::before { content: "–"; position: absolute; left: 0; color: var(--sage); }
