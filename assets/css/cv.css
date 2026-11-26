@@ -694,10 +694,7 @@ a.work-row:hover small { color: #fff; }
   .toc { margin-top: var(--chapter-gap); }                      /* 차례 위 여백을 다른 대제목(경력·지금 하는 일·부록)과 같게 */
 }
 
-/* ═════ 표지 연락처 아래 거주·근무 위치 한 줄 ═════ */
-.contact .contact-loc { margin: 10px 0 0; font-size: 13px; line-height: 1.4; color: var(--soft); white-space: nowrap; }   /* PC: 글자 위 간격을 넓힘 */
 @media (max-width: 720px) {
-  .contact .contact-loc { margin-top: 12px; line-height: 1.2; }   /* .contact p의 margin:0을 이기도록 선택자를 길게 씀 */
   .flow { margin-top: 14px; }  /* 위치 줄과 아래 선 사이 간격을 넓힘 */
 }
 
